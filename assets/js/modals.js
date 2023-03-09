@@ -15,4 +15,9 @@
   </div>
 </div>*/
 
-// wfwefr
+// Modal
+
+function modaFactory( modalSelector ) {
+
+
+}
