@@ -1,5 +1,7 @@
 jQuery(document).ready(function($) {
 // TODO: Create variables for; beginBtn, cityInput, dateInput, timeInput, submitBtn, eventLongitude, eventLatitude, eventDate, eventTime etc.
+// TODO: Get API key for ticketmaster to use in getting ticketmaster info .
+// TODO: Get API key for weatherapi to use in getting weatherapi info.
 
 // TODO: Create 'click' eventListener to beginBtn to redirect users to the form page to fill out.
 // TODO: Create 'click' eventListener to submitBtn so that once people have first, inputted the city, then date then time, they are confronted with a list of events in the designated city, at the date and time they inputted.
