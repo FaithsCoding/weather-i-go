@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="mb-4">
         <h1>Weather-I-Go</h1>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <ul class="navbar-end">
@@ -31,27 +31,17 @@
         </section>
 
         <section>
-            <div class="box is-justify-content-center is-4 is-flex">
-                <h2>HEADER</h2>
-            </div>
-            <div class="box is-justify-content-center is-4 is-flex">
-                <h2>PLACEHOLDER</h2>
-            </div>
-            <div>
-                <h3>searchboxes show prev value</h3>
-            </div>
             <div class="columns is-flex is-justify-content-center is-4">
+                <label for ="location"> Location</label>
                 <input class="column is-one-fifth" type="text" placeholder="Location">
+                <label for ="date">Date</label>
                 <input class="column is-one-fifth" type="datetime-local">
             </div>
+            <div class="columns is-flex is-justify-content-center">
+                <button class="button is-primary" type="submit">Submit</button>
+            </div>
+        </form>
 
-            <section>
-
-                <div class="columns is-flex is-justify-content-center">
-
-                    <button class="column is-1">Search</button>
-                </div>
-            </section>
         </section>
         <section>
 
