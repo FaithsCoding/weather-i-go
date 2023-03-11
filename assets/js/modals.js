@@ -29,7 +29,7 @@ function modalFactory( modalID, modalTitle, modalContent, isActive = false ) {
       '  <header class="modal-card-head">' +
             '<p class="title is-4">'+ modalTitle +'!</p>' +
             '<p>' + modalContent + ' </p> ' +
-        '   </div>' +
+        ' </header>' +
       '</div>'+
     '</div>' +
     '<button class="modal-close is-large" aria-label="close"></button>' +
@@ -37,8 +37,15 @@ function modalFactory( modalID, modalTitle, modalContent, isActive = false ) {
   // comment
   // add it to the body
     jQuery('body').append(modalHTML);
+    // add the is-active class to the modal if it is true
+    if ( isActive ) {
+    jQuery('#modal-' + modalID).addClass('is-active');
+    } else {
+      // silence is golden
+    }
+    // add listener to close button to the modal
     jQuery('.modal-close').on('click', function() {
-      $('.modal').remove();
+      jQuery('.modal').remove();
     });
   return modalHTML;
 }
