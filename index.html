@@ -6,7 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather I Go</title>
+<!-- FontAwesome 6.2.0 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<!-- (Optional) Use CSS or JS implementation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+    integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link href="
@@ -74,10 +82,10 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
             <p class="subtitle">
               Dont get soaked !
             </p>
-            <section class="columns is-mobile">
-                <div class="column is-flex is-justify-content-center is-4">
-                    <form class="rocket-forms" id="appStart" method="" action="">
-                        <div class="control control-date has-icons-left has-icons-right">
+            <section class="columns is-mobile  is-justify-content-center">
+                <div class="column is-justify-content-center is-8">
+                    <form class="rocket-forms box" id="appStart" method="" action="">
+                        <div class="control control-location has-icons-left has-icons-right">
                             <input class="input is-large" type="text" placeholder="Search for a city/place or click 'Use my location' button! ">
                             <span class="icon is-medium is-left">
                               <i class="fas fa-pin"></i>
@@ -86,7 +94,16 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
                               <i class="fas fa-check"></i>
                             </span>
                           </div>
-                          <div class="control control-date has-icons-left has-icons-right">
+                          <div class="control control-usemy has-icons-left has-icons-right">
+                            <button id="my-location" class="button is-large">Use my Location!</button>
+                            <span class="icon is-medium is-left">
+                              <i class="fas fa-pin"></i>
+                            </span>
+                            <span class="icon is-medium is-right">
+                              <i class="fas fa-check"></i>
+                            </span>
+                          </div>
+                          <div class="control control-datetime has-icons-left has-icons-right">
                             <input id="dateTime" class="input is-large bulmaCalendar" type="datetime-local" placeholder="Date & Time">
                             <span class="icon is-medium is-left">
                               <i class="fas fa-calendar"></i>
@@ -97,12 +114,12 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
                           </div>
 
                         
-                        <div class="columns is-flex is-justify-content-center">
-                            <button type="submit" class="column is-1">Search</button>
+                        
+                            <button id="submitButton" type="submit" class="button is-primary">Search</button>
                         </div>
                     </form>
                 </div>
-        </section>
+        
           </div>
         </div>
       
@@ -111,6 +128,7 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
           <nav class="tabs is-boxed is-fullwidth">
             <div class="container">
                 <ul>
+                    <li>Made with love © 2023 by Team Rocket</li>
                     <li><a href="https://github.com/Jake-Orch">Jake Orchard</a></li>
                     <li><a href="https://github.com/dexit">Rihards Man</a></li>
                     <li><a href="https://github.com/Adinahidan">Adina Hidan</a></li>

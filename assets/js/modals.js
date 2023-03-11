@@ -22,9 +22,9 @@
 function modalFactory( modalID, modalTitle, modalContent, isActive = false ) {
   try{
   
-  var modal = document.getElementById(modalID);
-  var modalBackground = modal.querySelector('.modal-background');
-  var modalCard = modal.querySelector('.modal-card');
+  //var modal = document.getElementById(modalID);
+  //var modalBackground = modal.querySelector('.modal-background');
+  //var modalCard = modal.querySelector('.modal-card');
   var modalHTML = '' +
     ' <div id="modal-' + modalID + '" class="modal">' +
     '   <div class="modal-background"></div>' +

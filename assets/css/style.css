@@ -2,6 +2,11 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
+
+.datetimepicker-dummy {
+
+    height: 60px!important;
+}
 .datetimepicker-dummy .datetimepicker-dummy-wrapper {
     font-size: 1.5em!important;
 }
@@ -19,4 +24,46 @@
 .navbar-brand .navbar-item img {
     max-height: 2.55em;
     margin-right: 10px;
+}
+.datetimepicker {
+    max-width: inherit!important;
+}
+.datetimepicker-dummy .datetimepicker-clear-button {
+    top: 50%!important;
+    transform: translate(0px, -85%) rotate(45deg)!important;
+}
+
+.rocket-forms {
+    display: flex!important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.modal-card-foot, .modal-card-head {
+    flex-direction: column;
+    border-radius: 10px!important;
+}
+.rocket-forms .control {
+    margin: 0.625em 0;
+}
+.control.control-location.has-icons-left.has-icons-right {
+    width: 100%;
+    max-width: 70%;
+}
+.control.control-usemy.has-icons-left.has-icons-right {
+    max-width: fit-content;
+    width: 100%;
+}
+.control.control-datetime.has-icons-left.has-icons-right {
+    max-width: 60%;
+    width: 100%;
+}
+.control.control-location input.input.is-large {
+    text-align: center;
+}
+button.button.is-primary {
+    max-width: 37%;
+    width: 100%;
+    height: 60px;
 }
