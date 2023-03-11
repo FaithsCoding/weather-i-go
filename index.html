@@ -184,12 +184,49 @@
       
       
 
+    <script>
+        function loadDeferredScripts() {
+            // a basic function to be used to load scripts dynanically
+            function loadScript(src) {
+                return new Promise(function(resolve, reject) {
+                var script = document.createElement('script');
+                script.src = src;
+                script.defer = true;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.body.appendChild(script); // Append to the body instead of the head
+                });
+            }
+
+            loadScript('https://code.jquery.com/jquery-3.6.4.min.js')
+                .then(function() {
+                var scriptUrls = [
+                    './assets/js/errorhandler.js',
+                    './assets/js/modals.js',
+                    './assets/js/ticketmaster.js',
+                    './assets/js/weatherapi.js',
+                    './assets/js/script.js',
+                ];
+
+                return Promise.all(scriptUrls.map(loadScript));
+                })
+                .catch(function(error) {
+                     console.error(error);
+                });
+        }
+        // add event listener for just when the DOM is loaded, without waiting for the whole page resources to load.
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDeferredScripts();
+        });
+    </script>
+    <!-- 
     <script src="assets/script.js"></script>
     <script src="assets/js/errorhandler.js"></script>
     <script src="assets/js/googelapi.js"></script>
     <script src="assets/js/modals.js"></script>
     <script src="assets/js/ticketmaster.js"></script>
     <script src="assets/js/weatherapi.js"></script>
+-->
 </body>
 
 </html>
