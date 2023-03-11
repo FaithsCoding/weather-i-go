@@ -9,11 +9,14 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="
+https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.css
+" rel="stylesheet">
 
 </head>
 
-<body>
-    <header class="mb-4">
+<body >
+    <header  class="container is-fluid">
         <h1>Weather-I-Go</h1>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <ul class="navbar-end">
@@ -21,32 +24,115 @@
             </ul>
         </nav>
     </header>
+    <section class="hero is-success is-fullheight">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <header class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item">
+                  <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+                </a>
+                <span class="navbar-burger" data-target="navbarMenuHeroC">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroC" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item is-active">
+                    Home
+                  </a>
+                  <a class="navbar-item">
+                    Examples
+                  </a>
+                  <a class="navbar-item">
+                    Documentation
+                  </a>
+                  <span class="navbar-item">
+                    <a class="button is-success is-inverted">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Download</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+      
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <p class="title">
+              Weather i Go
+            </p>
+            <p class="subtitle">
+              Dont get soaked !
+            </p>
+            <section class="columns is-mobile">
+                <div class="column is-flex is-justify-content-center is-4">
+                    <form class="rocket-forms" id="appStart" method="" action="">
+                        <div class="control control-date has-icons-left has-icons-right">
+                            <input class="input is-large" type="text" placeholder="Search for a city/place or click 'Use my location' button! ">
+                            <span class="icon is-medium is-left">
+                              <i class="fas fa-pin"></i>
+                            </span>
+                            <span class="icon is-medium is-right">
+                              <i class="fas fa-check"></i>
+                            </span>
+                          </div>
+                          <div class="control control-date has-icons-left has-icons-right">
+                            <input id="dateTime" class="input is-large bulmaCalendar" type="datetime-local" placeholder="Date & Time">
+                            <span class="icon is-medium is-left">
+                              <i class="fas fa-calendar"></i>
+                            </span>
+                            <span class="icon is-medium is-right">
+                              <i class="fas fa-check"></i>
+                            </span>
+                          </div>
 
-    <main>
+                        
+                        <div class="columns is-flex is-justify-content-center">
+                            <button type="submit" class="column is-1">Search</button>
+                        </div>
+                    </form>
+                </div>
+        </section>
+          </div>
+        </div>
+      
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot">
+          <nav class="tabs is-boxed is-fullwidth">
+            <div class="container">
+                <ul>
+                    <li><a href="https://github.com/Jake-Orch">Jake Orchard</a></li>
+                    <li><a href="https://github.com/dexit">Rihards Man</a></li>
+                    <li><a href="https://github.com/Adinahidan">Adina Hidan</a></li>
+                    <li><a href="https://github.com/FaithsCoding">Faith Meades</a></li>
+                  </ul>
+            </div>
+          </nav>
+        </div>
+      </section>
+    <main  class="container is-fluid">
         <section>
             <div class="box is-justify-content-center text has-text-centered">
                 <h1>HEADER</h1>
             </div>
+        </section>
+        <section>
             <div class="box is-justify-content-center text has-text-centered">
                 <h1>PLACEHOLDER</h1>
                 <button class="is-primary">Search Location</button>
             </div>
         </section>
 
-        <section>
-            <section>
-                <div class="columns is-flex is-justify-content-center is-4">
-                    <label for="location"> Location</label>
-                    <input class="column is-one-fifth" type="text" placeholder="Location">
-                    <label for="date">Date</label>
-                    <input class="column is-one-fifth" type="datetime-local">
-                </div>
-                <section>
-                    <div class="columns is-flex is-justify-content-center">
-                        <button class="column is-1">Search</button>
-                    </div>
-                </section>
-            </section>
+
 
             <section>
                 <div class="columns is-multiline" style="margin: 5px; padding: 5px;" id="card-one">
@@ -104,7 +190,8 @@
                             </div>
                         </div>
                     </div>
-            </section>
+                
+    </section>
 
             <section>
                 <div class="columns is-multiline" style="margin: 5px; padding: 5px;" id="card-four">
@@ -192,15 +279,18 @@
                 var script = document.createElement('script');
                 script.src = src;
                 script.defer = true;
+                script.async = false;
+                script.crossOrigin = '';
                 script.onload = resolve;
                 script.onerror = reject;
                 document.body.appendChild(script); // Append to the body instead of the head
                 });
             }
-
+            
             loadScript('https://code.jquery.com/jquery-3.6.4.min.js')
                 .then(function() {
                 var scriptUrls = [
+                    'https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/js/bulma-calendar.min.js',
                     './assets/js/errorhandler.js',
                     './assets/js/modals.js',
                     './assets/js/ticketmaster.js',

@@ -1,5 +1,11 @@
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-background-color: aqua;
-margin: 5px 0px;
+
+}
+.datetimepicker-dummy .datetimepicker-dummy-wrapper {
+    font-size: 1.5em!important;
+}
+.datetimepicker-dummy .datetimepicker-dummy-wrapper::before, .datetimepicker-dummy .datetimepicker-dummy-wrapper:before {
+    top: 50%!important;
+    transform: translate(0px, -50%);
 }
