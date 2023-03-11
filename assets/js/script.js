@@ -13,17 +13,19 @@ jQuery(document).ready(function($) {
 
 
 //This functions allows users to use their own geolocation instead of inputting one
-var locationGet = $('#my-location');
-locationGet.addEventClicker('click', getLocation);
-function getLocation() {
+//var locationGet = $('#my-location');
+$('#my-location').on('click', function(event){
+    event.preventDefault();
     if (navigator.geolocation) {
+        
         navigator.geolocation.getCurrentPosition(showPosition);
+        modalFactory('Location Test', 'Testing location', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude);
         console.log("Latitude: " + position.coords.latitude);
         console.log("Longitude: " + position.coords.longitude);
     } else {
         var error = "Geolocation is not supported by this browser."
         errorHandler(error);
     }
-}
+});
 
 });
