@@ -67,3 +67,19 @@ button.button.is-primary {
     width: 100%;
     height: 60px;
 }
+
+.fixRocket {
+    margin-left:10px;
+}
+
+.mainForm.container.has-text-centered {
+    width: 100%;
+}
+
+.hero.is-fullheight .hero-body {
+    flex-wrap: wrap;
+}
+
+.results.container.has-text-centered {
+    margin-top: 96px;
+}

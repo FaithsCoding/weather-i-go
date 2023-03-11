@@ -6,15 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather I Go</title>
-<!-- FontAwesome 6.2.0 CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- FontAwesome 5.15.4 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<!-- (Optional) Use CSS or JS implementation -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
-    integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link href="
@@ -75,7 +69,7 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
       
         <!-- Hero content: will be in the middle -->
         <div class="hero-body">
-          <div class="container has-text-centered">
+          <div class="mainForm container has-text-centered">
             <p class="title">
               Weather i Go
             </p>
@@ -86,27 +80,23 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
                 <div class="column is-justify-content-center is-8">
                     <form class="rocket-forms box" id="appStart" method="" action="">
                         <div class="control control-location has-icons-left has-icons-right">
-                            <input class="input is-large" type="text" placeholder="Search for a city/place or click 'Use my location' button! ">
+                            <input class="input is-large is-focused  is-rounded" type="text" placeholder="Search for a city/place or click 'Use my location' button! ">
                             <span class="icon is-medium is-left">
-                              <i class="fas fa-pin"></i>
+                                <i class="fas fa-map-marker-alt"></i>
                             </span>
                             <span class="icon is-medium is-right">
                               <i class="fas fa-check"></i>
                             </span>
                           </div>
+
                           <div class="control control-usemy has-icons-left has-icons-right">
                             <button id="my-location" class="button is-large">Use my Location!</button>
-                            <span class="icon is-medium is-left">
-                              <i class="fas fa-pin"></i>
-                            </span>
-                            <span class="icon is-medium is-right">
-                              <i class="fas fa-check"></i>
-                            </span>
                           </div>
+                          
                           <div class="control control-datetime has-icons-left has-icons-right">
                             <input id="dateTime" class="input is-large bulmaCalendar" type="datetime-local" placeholder="Date & Time">
                             <span class="icon is-medium is-left">
-                              <i class="fas fa-calendar"></i>
+                              <i class="fas "></i>
                             </span>
                             <span class="icon is-medium is-right">
                               <i class="fas fa-check"></i>
@@ -116,10 +106,102 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
                         
                         
                             <button id="submitButton" type="submit" class="button is-primary">Search</button>
-                        </div>
+                        
                     </form>
                 </div>
-        
+            </section>
+          </div>
+          <div class="results container has-text-centered">
+            <section class="columns is-mobile is-12 is-justify-content-center">
+                
+            <div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">John Smith</p>
+                              <p class="subtitle is-6">@johnsmith</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            <br>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                </div><div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">John Smith</p>
+                              <p class="subtitle is-6">@johnsmith</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            <br>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                </div><div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">John Smith</p>
+                              <p class="subtitle is-6">@johnsmith</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            <br>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                </div></section>
           </div>
         </div>
       
@@ -128,7 +210,10 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
           <nav class="tabs is-boxed is-fullwidth">
             <div class="container">
                 <ul>
-                    <li>Made with love © 2023 by Team Rocket</li>
+                    <li class="is-active"><a>Made with ❤️ &nbsp; 2023 by Team Rocket <figure class="fixRocket image is-24x24">
+                        <img src="./assets/images/Rocketlogo.png">
+                      </figure></a></li>
+                      <li></li>
                     <li><a href="https://github.com/Jake-Orch">Jake Orchard</a></li>
                     <li><a href="https://github.com/dexit">Rihards Man</a></li>
                     <li><a href="https://github.com/Adinahidan">Adina Hidan</a></li>
@@ -138,8 +223,8 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
           </nav>
         </div>
       </section>
-    <main  class="container is-fluid">
-        <section>
+ <!--   <main  class="container is-fluid">--> 
+    <!--     <section>
             <div class="box is-justify-content-center text has-text-centered">
                 <h1>HEADER</h1>
             </div>
@@ -279,7 +364,7 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
         <div class="column is-half">
           <div class="has-text-right">
             <ul>
-              <li><a href="https://github.com/Jake-Orch">Jake Orchard</a></li>
+              <li ><a href="https://github.com/Jake-Orch">Jake Orchard</a></li>
               <li><a href="https://github.com/dexit">Rihards Man</a></li>
               <li><a href="https://github.com/Adinahidan">Adina Hidan</a></li>
               <li><a href="https://github.com/FaithsCoding">Faith Meades</a></li>
@@ -288,7 +373,7 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
         </div>
       </footer>
       
-      
+      -->
 
     <script>
         function loadDeferredScripts() {
@@ -310,6 +395,7 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
                 .then(function() {
                 var scriptUrls = [
                     'https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/js/bulma-calendar.min.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js',
                     './assets/js/errorhandler.js',
                     './assets/js/modals.js',
                     './assets/js/ticketmaster.js',
