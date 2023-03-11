@@ -10,8 +10,13 @@
     transform: translate(0px, -50%);
 }
 
-.navbar-brand a {
+.navbar-brand a span{
     font-size: 1.75em;
     font-weight: 600;
     line-height: 1.125;
+    opacity: 0.75;
+}
+.navbar-brand .navbar-item img {
+    max-height: 2.55em;
+    margin-right: 10px;
 }
