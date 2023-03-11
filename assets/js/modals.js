@@ -39,13 +39,17 @@ function modalFactory( modalID, modalTitle, modalContent, isActive = false ) {
     jQuery('body').append(modalHTML);
     // add the is-active class to the modal if it is true
     if ( isActive ) {
-    jQuery('#modal-' + modalID).addClass('is-active');
+      jQuery('#modal-' + modalID).addClass('is-active');
     } else {
       // silence is golden
     }
-    // add listener to close button to the modal
-    jQuery('.modal-close').on('click', function() {
-      jQuery('.modal').remove();
+    // add listener to close button to any modal modal
+    //jQuery('.modal-close').on('click', function() {
+    //  jQuery(this).parent('.modal').removeClass('is-active');
+    //});
+
+    jQuery('#modal-' + modalID + ' .modal-close').on('click', function() {
+      jQuery(this).parent('.modal').removeClass('is-active');
     });
   return modalHTML;
 }
