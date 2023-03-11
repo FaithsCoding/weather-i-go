@@ -9,3 +9,9 @@
     top: 50%!important;
     transform: translate(0px, -50%);
 }
+
+.navbar-brand a {
+    font-size: 1.75em;
+    font-weight: 600;
+    line-height: 1.125;
+}
