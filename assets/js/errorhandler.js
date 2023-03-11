@@ -5,8 +5,11 @@ function errorHandler(error){
     var modalID = Math.floor(Math.random() * 1337);
     var modalTitle = 'Error';
     var modalContent = 'Something went wrong. Please try again later.';
-    modalContent += '<br><br>';
+    modalContent += '<br>';
     modalContent += '<pre>' + error +'</pre>';
+    modalContent += '<br>';
+    modalContent += '<pre>' + error.message +'</pre>';
     modalFactory( modalID, modalTitle, modalContent, true );
 
 }
+
