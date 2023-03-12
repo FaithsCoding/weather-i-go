@@ -11,6 +11,8 @@ jQuery(document).ready(function($) {
 // TODO: Create function which displays ERROR modals for if the city cannot be found, if there are no events in that area etc.
 // TODO: Create function which saves previous searches to their local storage as an array, then json parse them into a 'previous searches' section of the form page.
 
+// TODO: add DAYJS
+// TODO: use dajys to convert the time provided from datepicker to be used in ticketmaster request.
 
 //This functions allows users to use their own geolocation instead of inputting one
 //var locationGet = $('#my-location');
@@ -54,7 +56,7 @@ function showPosition(position) {
   }
 
 
-// this is for calendar
+// this is for calendar 
 var optionsCalendar = '';
 // do the calendar
 // Initialize all input of type date
