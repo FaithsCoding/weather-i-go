@@ -86,3 +86,11 @@ button.button.is-primary {
 .hero-foot {
     margin-top: 96px;
 }
+
+.fixmymap {
+    flex-wrap: wrap;
+}
+div#map {
+    height: 335px;
+    width: 100%;
+}

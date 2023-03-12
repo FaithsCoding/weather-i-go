@@ -16,22 +16,11 @@ jQuery(document).ready(function($) {
 
 //This functions allows users to use their own geolocation instead of inputting one
 //var locationGet = $('#my-location');
-$('#submitButton').on('click', function(event){
+$('#appStart').on('submit', function(event){
     event.preventDefault();
-    if (navigator.geolocation) {
-        
-        navigator.geolocation.getCurrentPosition(showPosition);
-      //
-        
-      navigator.geolocation.getCurrentPosition(function(position) {
-        modalFactory('LocationTest', 'Testing location', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
-      console.log("Latitude: " + position.coords.latitude);
-        console.log("Longitude: " + position.coords.longitude);
-      });
-    } else {
-        var error = "Geolocation is not supported by this browser."
-        errorHandler(error);
-    }
+    var locationInput = $('#location-input').val();
+    var dateTimeInput = $('#dateTime').val();
+
 });
 // this is for the GET my LOCATION activity
 $('#my-location').on('click', function(event){

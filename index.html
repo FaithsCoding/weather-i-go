@@ -80,7 +80,7 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
                 <div class="column is-justify-content-center is-8">
                     <form class="rocket-forms box" id="appStart" method="" action="">
                         <div class="control control-location has-icons-left has-icons-right">
-                            <input class="input is-large is-focused  is-rounded" type="text" placeholder="Search for a city/place or click 'Use my location' button! ">
+                            <input id="location-input" class="input is-large is-focused  is-rounded" type="text" placeholder="Search for a city/place or click 'Use my location' button! ">
                             <span class="icon is-medium is-left">
                                 <i class="fas fa-map-marker-alt"></i>
                             </span>
@@ -112,8 +112,10 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
             </section>
           </div>
           <div class="results container has-text-centered">
-            <section class="columns is-mobile is-12 is-justify-content-center">
-                
+            <section class="fixmymap columns is-mobile is-12 is-justify-content-center">
+                <div id="map" class="column is-12"></div>  
+
+                <!-- below results loop -->
             <div class="column is-4">
                     <div class="card">
                         <div class="card-image">
@@ -205,7 +207,7 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
           </div>
           <div class="results container has-text-centered">
             <section class="columns is-mobile is-12 is-justify-content-center">
-                
+ 
             <div class="column is-12">
                     <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
   <a class="pagination-previous">Previous</a>
@@ -223,7 +225,7 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
                 </div></section>
           </div>
         </div>
-      
+         
         <!-- Hero footer: will stick at the bottom -->
         <div class="hero-foot">
           <nav class="tabs is-boxed is-fullwidth">
@@ -403,7 +405,7 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
                 script.src = src;
                 script.defer = true;
                 script.async = false;
-                script.crossOrigin = '';
+              //  script.crossOrigin = '';
                 script.onload = resolve;
                 script.onerror = reject;
                 document.body.appendChild(script); // Append to the body instead of the head
@@ -415,11 +417,15 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
                 var scriptUrls = [
                     'https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/js/bulma-calendar.min.js',
                     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js',
+                  //  '',
+                    'https://polyfill.io/v3/polyfill.min.js?features=default',
+                    
                     './assets/js/errorhandler.js',
                     './assets/js/modals.js',
                     './assets/js/ticketmaster.js',
                     './assets/js/weatherapi.js',
                     './assets/js/script.js',
+                    './assets/js/googelapi.js',
                 ];
 
                 return Promise.all(scriptUrls.map(loadScript));
@@ -431,8 +437,12 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
         // add event listener for just when the DOM is loaded, without waiting for the whole page resources to load.
         document.addEventListener('DOMContentLoaded', function() {
             loadDeferredScripts();
+            //initMap();
+            
         });
+      
     </script>
+  
     <!-- 
     <script src="assets/script.js"></script>
     <script src="assets/js/errorhandler.js"></script>
