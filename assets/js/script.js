@@ -11,19 +11,61 @@ jQuery(document).ready(function($) {
 // TODO: Create function which displays ERROR modals for if the city cannot be found, if there are no events in that area etc.
 // TODO: Create function which saves previous searches to their local storage as an array, then json parse them into a 'previous searches' section of the form page.
 
+// TODO: add DAYJS
+// TODO: use dajys to convert the time provided from datepicker to be used in ticketmaster request.
 
 //This functions allows users to use their own geolocation instead of inputting one
-var locationGet = $('#my-location');
-locationGet.addEventClicker('click', getLocation);
-function getLocation() {
+//var locationGet = $('#my-location');
+$('#appStart').on('submit', function(event){
+    event.preventDefault();
+    var locationInput = $('#location-input').val();
+    var dateTimeInput = $('#dateTime').val();
+
+});
+// this is for the GET my LOCATION activity
+$('#my-location').on('click', function(event){
+    event.preventDefault();
     if (navigator.geolocation) {
+        
         navigator.geolocation.getCurrentPosition(showPosition);
-        console.log("Latitude: " + position.coords.latitude);
+      //
+        
+      navigator.geolocation.getCurrentPosition(function(position) {
+        modalFactory('LocationTest', 'Testing location', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
+      console.log("Latitude: " + position.coords.latitude);
         console.log("Longitude: " + position.coords.longitude);
+      });
     } else {
         var error = "Geolocation is not supported by this browser."
         errorHandler(error);
     }
+});
+function showPosition(position) {
+    modalFactory('LocationTest', 'Testing location', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
+  }
+
+
+// this is for calendar 
+var optionsCalendar = '';
+// do the calendar
+// Initialize all input of type date
+var calendars = bulmaCalendar.attach('[type="datetime-local"]', optionsCalendar);
+
+// Loop on each calendar initialized
+for(var i = 0; i < calendars.length; i++) {
+	// Add listener to select event
+	calendars[i].on('select', date => {
+		console.log(date);
+	});
+}
+
+// To access to bulmaCalendar instance of an element
+var element = document.querySelector('#dateTime ');
+if (element) {
+	// bulmaCalendar instance is available as element.bulmaCalendar
+	element.bulmaCalendar.on('select', function(datepicker) {
+		console.log(datepicker.data.value());
+	});
 }
 
 });

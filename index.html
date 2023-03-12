@@ -6,14 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather I Go</title>
+<!-- FontAwesome 5.15.4 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="
+https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.css
+" rel="stylesheet">
 
 </head>
 
-<body>
-    <header class="mb-4">
+<body >
+   <!--  <header  class="container is-fluid">
         <h1>Weather-I-Go</h1>
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <ul class="navbar-end">
@@ -21,32 +26,238 @@
             </ul>
         </nav>
     </header>
+    -->
+    <section class="hero is-success is-fullheight">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <header class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item">
+                  <img src="./assets/images/weatherlogo.png" alt="Logo"><span>WeatheriGo</span>
+                </a>
+                <span class="navbar-burger" data-target="navbarMenuHeroC">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroC" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item is-active">
+                    Home
+                  </a>
+                  <a class="navbar-item">
+                    About
+                  </a>
+                  <a class="navbar-item">
+                    Contact
+                  </a>
+                  <span class="navbar-item">
+                    <a class="button is-success is-inverted" href="https://github.com/FaithsCoding/weather-i-go" title="Weather i Go - Repo">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Download</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+      
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+          <div class="mainForm container has-text-centered">
+            <p class="title">
+              Weather i Go
+            </p>
+            <p class="subtitle">
+              Dont get soaked !
+            </p>
+            <section class="columns is-mobile  is-justify-content-center">
+                <div class="column is-justify-content-center is-8">
+                    <form class="rocket-forms box" id="appStart" method="" action="">
+                        <div class="control control-location has-icons-left has-icons-right">
+                            <input id="location-input" class="input is-large is-focused  is-rounded" type="text" placeholder="Search for a city/place or click 'Use my location' button! ">
+                            <span class="icon is-medium is-left">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </span>
+                            <span class="icon is-medium is-right">
+                              <i class="fas fa-check"></i>
+                            </span>
+                          </div>
 
-    <main>
-        <section>
+                          <div class="control control-usemy has-icons-left has-icons-right">
+                            <button id="my-location" class="button is-large">Use my Location!</button>
+                          </div>
+                          
+                          <div class="control control-datetime has-icons-left has-icons-right">
+                            <input id="dateTime" class="input is-large bulmaCalendar" type="datetime-local" placeholder="Date & Time">
+                            <span class="icon is-medium is-left">
+                              <i class="fas "></i>
+                            </span>
+                            <span class="icon is-medium is-right">
+                              <i class="fas fa-check"></i>
+                            </span>
+                          </div>
+
+                        
+                        
+                            <button id="submitButton" type="submit" class="button is-primary">Search</button>
+                        
+                    </form>
+                </div>
+            </section>
+          </div>
+          <div class="results container has-text-centered">
+            <section class="fixmymap columns is-mobile is-12 is-justify-content-center">
+                <div id="map" class="column is-12"></div>  
+
+                <!-- below results loop -->
+            <div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">John Smith</p>
+                              <p class="subtitle is-6">@johnsmith</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            <br>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                </div><div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">John Smith</p>
+                              <p class="subtitle is-6">@johnsmith</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            <br>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                </div><div class="column is-4">
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-left">
+                              <figure class="image is-48x48">
+                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                              </figure>
+                            </div>
+                            <div class="media-content">
+                              <p class="title is-4">John Smith</p>
+                              <p class="subtitle is-6">@johnsmith</p>
+                            </div>
+                          </div>
+                      
+                          <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            <br>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                          </div>
+                        </div>
+                      </div>
+                </div></section>
+          </div>
+          <div class="results container has-text-centered">
+            <section class="columns is-mobile is-12 is-justify-content-center">
+ 
+            <div class="column is-12">
+                    <nav class="pagination is-rounded" role="navigation" aria-label="pagination">
+  <a class="pagination-previous">Previous</a>
+  <a class="pagination-next">Next page</a>
+  <ul class="pagination-list">
+    <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+    <li><span class="pagination-ellipsis">…</span></li>
+    <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+    <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+    <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+    <li><span class="pagination-ellipsis">…</span></li>
+    <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+  </ul>
+</nav>
+                </div></section>
+          </div>
+        </div>
+         
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot">
+          <nav class="tabs is-boxed is-fullwidth">
+            <div class="container">
+                <ul>
+                    <li class="is-active"><a>Made with ❤️ &nbsp; 2023 by Team Rocket <figure class="fixRocket image is-24x24">
+                        <img src="./assets/images/Rocketlogo.png">
+                      </figure></a></li>
+                      <li></li>
+                    <li><a href="https://github.com/Jake-Orch">Jake Orchard</a></li>
+                    <li><a href="https://github.com/dexit">Rihards 'dExIT' Mantejs</a></li>
+                    <li><a href="https://github.com/Adinahidan">Adina Hidan</a></li>
+                    <li><a href="https://github.com/FaithsCoding">Faith Meades</a></li>
+                  </ul>
+            </div>
+          </nav>
+        </div>
+      </section>
+ <!--   <main  class="container is-fluid">--> 
+    <!--     <section>
             <div class="box is-justify-content-center text has-text-centered">
                 <h1>HEADER</h1>
             </div>
+        </section>
+        <section>
             <div class="box is-justify-content-center text has-text-centered">
                 <h1>PLACEHOLDER</h1>
                 <button class="is-primary">Search Location</button>
             </div>
         </section>
 
-        <section>
-            <section>
-                <div class="columns is-flex is-justify-content-center is-4">
-                    <label for="location"> Location</label>
-                    <input class="column is-one-fifth" type="text" placeholder="Location">
-                    <label for="date">Date</label>
-                    <input class="column is-one-fifth" type="datetime-local">
-                </div>
-                <section>
-                    <div class="columns is-flex is-justify-content-center">
-                        <button class="column is-1">Search</button>
-                    </div>
-                </section>
-            </section>
+
 
             <section>
                 <div class="columns is-multiline" style="margin: 5px; padding: 5px;" id="card-one">
@@ -104,7 +315,8 @@
                             </div>
                         </div>
                     </div>
-            </section>
+                
+    </section>
 
             <section>
                 <div class="columns is-multiline" style="margin: 5px; padding: 5px;" id="card-four">
@@ -173,7 +385,7 @@
         <div class="column is-half">
           <div class="has-text-right">
             <ul>
-              <li><a href="https://github.com/Jake-Orch">Jake Orchard</a></li>
+              <li ><a href="https://github.com/Jake-Orch">Jake Orchard</a></li>
               <li><a href="https://github.com/dexit">Rihards Man</a></li>
               <li><a href="https://github.com/Adinahidan">Adina Hidan</a></li>
               <li><a href="https://github.com/FaithsCoding">Faith Meades</a></li>
@@ -182,14 +394,63 @@
         </div>
       </footer>
       
-      
+      -->
 
+    <script>
+        function loadDeferredScripts() {
+            // a basic function to be used to load scripts dynanically
+            function loadScript(src) {
+                return new Promise(function(resolve, reject) {
+                var script = document.createElement('script');
+                script.src = src;
+                script.defer = true;
+                script.async = false;
+              //  script.crossOrigin = '';
+                script.onload = resolve;
+                script.onerror = reject;
+                document.body.appendChild(script); // Append to the body instead of the head
+                });
+            }
+            
+            loadScript('https://code.jquery.com/jquery-3.6.4.min.js')
+                .then(function() {
+                var scriptUrls = [
+                    'https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/js/bulma-calendar.min.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js',
+                  //  '',
+                    'https://polyfill.io/v3/polyfill.min.js?features=default',
+                    
+                    './assets/js/errorhandler.js',
+                    './assets/js/modals.js',
+                    './assets/js/ticketmaster.js',
+                    './assets/js/weatherapi.js',
+                    './assets/js/script.js',
+                    './assets/js/googelapi.js',
+                ];
+
+                return Promise.all(scriptUrls.map(loadScript));
+                })
+                .catch(function(error) {
+                     console.error(error);
+                });
+        }
+        // add event listener for just when the DOM is loaded, without waiting for the whole page resources to load.
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDeferredScripts();
+            //initMap();
+            
+        });
+      
+    </script>
+  
+    <!-- 
     <script src="assets/script.js"></script>
     <script src="assets/js/errorhandler.js"></script>
     <script src="assets/js/googelapi.js"></script>
     <script src="assets/js/modals.js"></script>
     <script src="assets/js/ticketmaster.js"></script>
     <script src="assets/js/weatherapi.js"></script>
+-->
 </body>
 
 </html>
