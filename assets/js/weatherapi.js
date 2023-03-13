@@ -23,4 +23,4 @@ var weatherHumidity = data.main.humidity;
 var weatherWindSpeed = data.wind.speed;
 var weatherSunSet = new Date(data.sys.sunset * 1000).toLocaleTimeString();
 
-// Create function to append retrieved data to 
+// Create function to append retrieved data to the cards
