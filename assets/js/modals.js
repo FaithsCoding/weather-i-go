@@ -52,11 +52,12 @@ function modalFactory( modalID, modalTitle, modalContent, isActive = false ) {
     //  jQuery(this).parent('.modal').removeClass('is-active');
     //});
 
-    jQuery('#modal-' + modalID + ' .modal-close').on('click', function() {
-      jQuery(this).parent('.modal').removeClass('is-active');
+        jQuery('#modal-' + modalID + ' .modal-close').on('click', function() {
+          jQuery(this).parent('.modal').removeClass('is-active');
+        });
+      return modalHTML;
     });
-  return modalHTML;
-}) catch(e){
+  }catch(e){
   errorHandler(e);
   console.error(e);
  }
