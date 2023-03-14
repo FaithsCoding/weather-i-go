@@ -3,7 +3,7 @@ const titleInput = document.getElementById("title-input");
 const bodyInput = document.getElementById("body-input");
 const cardContainer = document.getElementById("card-container");
 
-function displayCards() {
+function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   // create new card element
   const card = document.createElement("div");
   card.classList.add("column", "is-4", "card");
@@ -14,7 +14,7 @@ function displayCards() {
   const figure = document.createElement("figure");
   figure.classList.add("image", "is-4by3");
   const img = document.createElement("img");
-  img.setAttribute("src", "https://bulma.io/images/placeholders/1280x960.png");
+  img.setAttribute("src", "https://placehold.co/1280x960?font=roboto&text="+eventoTitlo);
   img.setAttribute("alt", "Placeholder image");
   figure.appendChild(img);
   cardImage.appendChild(figure);
@@ -44,10 +44,10 @@ function displayCards() {
   mediaContent.classList.add("media-content");
   const title = document.createElement("p");
   title.classList.add("title", "is-4");
-  title.textContent = "John Smith";
+  title.textContent = eventoTitlo;
   const subtitle = document.createElement("p");
   subtitle.classList.add("subtitle", "is-6");
-  subtitle.textContent = "@johnsmith";
+  subtitle.textContent = dasVenue;
   mediaContent.appendChild(title);
   mediaContent.appendChild(subtitle);
   media.appendChild(mediaContent);
@@ -56,8 +56,7 @@ function displayCards() {
   // create card body element
   const cardBody = document.createElement("div");
   cardBody.classList.add("content");
-  cardBody.textContent =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. @bulmaio. #css #responsive";
+  cardBody.textContent = leExcerpto;
   const time = document.createElement("time");
   time.setAttribute("datetime", "2016-1-1");
   time.textContent = "11:09 PM - 1 Jan 2016";
