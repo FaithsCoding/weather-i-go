@@ -3,12 +3,12 @@ const titleInput = document.getElementById("title-input");
 const bodyInput = document.getElementById("body-input");
 const cardContainer = document.getElementById("card-container");
 
+//this creates the function for displaying rhe  cards
 function displayCards() {
-  // create new card element
   const card = document.createElement("div");
   card.classList.add("column", "is-4", "card");
 
-  // create card image element
+  // creates card image element
   const cardImage = document.createElement("div");
   cardImage.classList.add("card-image");
   const figure = document.createElement("figure");
@@ -19,15 +19,15 @@ function displayCards() {
   figure.appendChild(img);
   cardImage.appendChild(figure);
 
-  // create card content element
+  // creates card content element
   const cardContent = document.createElement("div");
   cardContent.classList.add("card-content");
 
-  // create media element
+  // create medias element
   const media = document.createElement("div");
   media.classList.add("media");
 
-  // create media left element
+  // create medias left element
   const mediaLeft = document.createElement("div");
   mediaLeft.classList.add("media-left");
   const figure2 = document.createElement("figure");
@@ -39,7 +39,7 @@ function displayCards() {
   mediaLeft.appendChild(figure2);
   media.appendChild(mediaLeft);
 
-  // create media content element
+  // creates media content element
   const mediaContent = document.createElement("div");
   mediaContent.classList.add("media-content");
   const title = document.createElement("p");
@@ -64,7 +64,7 @@ function displayCards() {
   cardBody.appendChild(time);
   cardContent.appendChild(cardBody);
 
-  // add card to the DOM
+  // adds card to the DOM
   const cardContainer = document.getElementById("card-container");
   cardContainer.appendChild(card);
   card.appendChild(cardImage);
