@@ -30,20 +30,34 @@ $('#appStart').on('submit', function(event){
  // var testmeh = 
   var fixedEventDate = dates.toISOString();
   var fixedEventDate = fixedEventDate.slice(0, fixedEventDate.length - 5) + 'Z';
-  console.log('WAZZZAAAAAA :'+ dates + ' \n: ' + fixedEventDate);
- // fixedEventDate += fixedEventDate + 'Z';
+ // console.log('WAZZZAAAAAA :'+ dates + ' \n: ' + fixedEventDate);
+ //fixedEventDate += fixedEventDate + 'Z';
   // '2023-03-19T19:17:00Z'
-  console.log(getEventsData(locationInput, fixedEventDate));
+  //console.log(JSON.stringify(getEventsData(locationInput, fixedEventDate)));
   mapElement.style.display = 'initial';
+  var resulted = getEventsData(locationInput, fixedEventDate);
+  const json = JSON.parse(resulted); // your JSON object here
+
+  const events = json._embedded.events;
+  
+  for (let i = 0; i < events.length; i++) {
+    const event = events[i];
+    console.log(`Event name: ${event.name}`);
+    console.log(`Event ID: ${event.id}`);
+    console.log(`Event URL: ${event.url}`);
+    console.log(`Event date: ${event.dates.start.localDate}`);
+    console.log(`Event time: ${event.dates.start.localTime}`);
+    console.log('---');
+  }
   // for each geteventsdata object loop over and log it
-  for (var i = 0; i < getEventsData.length; i++) {
-    console.log(getEventsData[i]);
+  //for (var i = 0; i < resulted.length; i++) {
+    //console.log(resulted[i]);
 
  // event.preventDefault();
-  displayCards('EVENT'+ i +'YAY', getEventsData[i], 'and the excerpto');
+  //displayCards('EVENT'+ i +'YAY', resulted[i], 'and the excerpto');
    // console.log(getEventsData[i].venue.name);
-  }
-
+  //}
+//modalFactory('Titled2321','Titled2321', '<pre>'+resulted+'</pre>', true);
 });
 // this is for the GET my LOCATION activity
 $('#my-location').on('click', function(event){
