@@ -9,6 +9,7 @@ function weatherAPI(eventLongitude, eventLatitude, eventDateTime){
     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + eventLatitude + "&lon=" + eventLongitude + "&dt=" + eventDateTimeUnix(eventDateTime) + "&units=metric&appid=" + weatherApiKey;
  $.get(apiUrl, function(data) {
     console.log(data); // Print weather data to console
+    return data;
   });
 }
 
@@ -16,11 +17,11 @@ function weatherAPI(eventLongitude, eventLatitude, eventDateTime){
 var runAPI = weatherAPI('-1.2409681', '52.3778256', '03/12/2023 19:00');
 
 // Select which responses of the aquired data from openweathermap API that we want
-var weatherCondition = data.weather.main;
-var weatherIcon = data.weather.icon;
-var weatherTemp = data.main.temp;
-var weatherHumidity = data.main.humidity;
-var weatherWindSpeed = data.wind.speed;
-var weatherSunSet = new Date(data.sys.sunset * 1000).toLocaleTimeString();
+//var weatherCondition = runAPI.weather.main;
+//var weatherIcon = runAPI.weather.icon;
+//var weatherTemp = runAPI.main.temp;
+//var weatherHumidity = runAPI.main.humidity;
+//var weatherWindSpeed = runAPI.wind.speed;
+//var weatherSunSet = new Date(runAPI.sys.sunset * 1000).toLocaleTimeString();
 
 // Create function to append retrieved data to 
