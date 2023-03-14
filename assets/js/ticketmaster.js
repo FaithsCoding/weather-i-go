@@ -15,7 +15,9 @@ function getEventsData(city, eventDateTime) {
         var venueLng = venue.location.longitude;
         var eventTime = Math.floor(new Date(eventDateTime).getTime() / 1000); // Convert event datetime to Unix timestamp in seconds
         console.log([venue, venueLat, venueLng, eventTime]);
-        // weatherAPI(eventLongitude, eventLatitude, eventDateTime) // Get weather data for the event location and time
+        var setWeather = weatherAPI(venueLng, venueLat, eventDateTime) // Get weather data for the event location and time
+        
+        console.log('Getting setWeather:\n'+setWeather);
       } else {
         console.log("No events found");
       }
