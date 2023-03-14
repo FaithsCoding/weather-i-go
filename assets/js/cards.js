@@ -82,7 +82,7 @@ const formSubmitButton = document.getElementById("submitButton");
 formSubmitButton.addEventListener("click", (event) => {
 //This shows the map which has been hidden
 mapElement.style.display = 'initial';
-  event.preventDefault();
+ // event.preventDefault();
   displayCards();
   
 });
