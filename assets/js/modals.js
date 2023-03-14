@@ -22,9 +22,9 @@
 function modalFactory( modalID, modalTitle, modalContent, isActive = false ) {
   try{
   
-  //var modal = document.getElementById(modalID);
-  //var modalBackground = modal.querySelector('.modal-background');
-  //var modalCard = modal.querySelector('.modal-card');
+  var modal = document.getElementById(modalID);
+  var modalBackground = modal.querySelector('.modal-background');
+  var modalCard = modal.querySelector('.modal-card');
   var modalHTML = '' +
     ' <div id="modal-' + modalID + '" class="modal">' +
     '   <div class="modal-background"></div>' +
@@ -48,7 +48,7 @@ function modalFactory( modalID, modalTitle, modalContent, isActive = false ) {
       // silence is golden
     }
     // add listener to close button to any modal modal
-    //jQuery('.modal-close').on('click', function() {
+    jQuery('.modal-close').on('click', function() {
     //  jQuery(this).parent('.modal').removeClass('is-active');
     //});
 
@@ -56,7 +56,7 @@ function modalFactory( modalID, modalTitle, modalContent, isActive = false ) {
       jQuery(this).parent('.modal').removeClass('is-active');
     });
   return modalHTML;
-}catch(e){
+}) catch(e){
   errorHandler(e);
   console.error(e);
  }
