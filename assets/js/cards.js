@@ -1,10 +1,15 @@
+/*
 const form = document.getElementById("my-form");
 const titleInput = document.getElementById("title-input");
 const bodyInput = document.getElementById("body-input");
 const cardContainer = document.getElementById("card-container");
-
+*/
 function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   // create new card element
+  const eventTitle = eventoTitlo;
+  const eventVenue = dasVenue;
+  const eventExcerpt = leExcerpto;
+
   const card = document.createElement("div");
   card.classList.add("column", "is-4", "card");
 
@@ -14,7 +19,7 @@ function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   const figure = document.createElement("figure");
   figure.classList.add("image", "is-4by3");
   const img = document.createElement("img");
-  img.setAttribute("src", "https://placehold.co/1280x960?font=roboto&text="+eventoTitlo);
+  img.setAttribute("src", "https://placehold.co/1280x960?font=roboto&text="+eventTitle);
   img.setAttribute("alt", "Placeholder image");
   figure.appendChild(img);
   cardImage.appendChild(figure);
@@ -44,10 +49,10 @@ function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   mediaContent.classList.add("media-content");
   const title = document.createElement("p");
   title.classList.add("title", "is-4");
-  title.textContent = eventoTitlo;
+  title.textContent = eventTitle;
   const subtitle = document.createElement("p");
   subtitle.classList.add("subtitle", "is-6");
-  subtitle.textContent = dasVenue;
+  subtitle.textContent = eventVenue;
   mediaContent.appendChild(title);
   mediaContent.appendChild(subtitle);
   media.appendChild(mediaContent);
@@ -56,7 +61,7 @@ function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   // create card body element
   const cardBody = document.createElement("div");
   cardBody.classList.add("content");
-  cardBody.textContent = leExcerpto;
+  cardBody.textContent = eventExcerpt;
   const time = document.createElement("time");
   time.setAttribute("datetime", "2016-1-1");
   time.textContent = "11:09 PM - 1 Jan 2016";
@@ -69,14 +74,14 @@ function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   card.appendChild(cardImage);
   card.appendChild(cardContent);
 }
-
+/*
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("my-form");
   const titleInput = document.getElementById("title-input");
   const bodyInput = document.getElementById("body-input");
   const cardContainer = document.getElementById("card-container");
 });
-
+*/
 const formSubmitButton = document.getElementById("submitButton");
 formSubmitButton.addEventListener("click", (event) => {
 //This shows the map which has been hidden
