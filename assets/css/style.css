@@ -5,63 +5,77 @@
 
 .datetimepicker-dummy {
 
-    height: 60px!important;
+    height: 60px !important;
 }
+
 .datetimepicker-dummy .datetimepicker-dummy-wrapper {
-    font-size: 1.5em!important;
+    font-size: 1.5em !important;
 }
-.datetimepicker-dummy .datetimepicker-dummy-wrapper::before, .datetimepicker-dummy .datetimepicker-dummy-wrapper:before {
-    top: 50%!important;
+
+.datetimepicker-dummy .datetimepicker-dummy-wrapper::before,
+.datetimepicker-dummy .datetimepicker-dummy-wrapper:before {
+    top: 50% !important;
     transform: translate(0px, -50%);
 }
 
-.navbar-brand a span{
+.navbar-brand a span {
     font-size: 1.75em;
     font-weight: 600;
     line-height: 1.125;
     opacity: 0.75;
 }
+
 .navbar-brand .navbar-item img {
     max-height: 2.55em;
     margin-right: 10px;
 }
+
 .datetimepicker {
-    max-width: inherit!important;
+    max-width: inherit !important;
 }
+
 .datetimepicker-dummy .datetimepicker-clear-button {
-    top: 50%!important;
-    transform: translate(0px, -85%) rotate(45deg)!important;
+    top: 50% !important;
+    transform: translate(0px, -85%) rotate(45deg) !important;
 }
 
 .rocket-forms {
-    display: flex!important;
+    display: flex !important;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.modal-card-foot, .modal-card-head {
+
+.modal-card-foot,
+.modal-card-head {
     flex-direction: column;
-    border-radius: 10px!important;
+    border-radius: 10px !important;
 }
+
 .rocket-forms .control {
     margin: 0.625em 0;
 }
+
 .control.control-location.has-icons-left.has-icons-right {
     width: 100%;
     max-width: 70%;
 }
+
 .control.control-usemy.has-icons-left.has-icons-right {
     max-width: fit-content;
     width: 100%;
 }
+
 .control.control-datetime.has-icons-left.has-icons-right {
     max-width: 60%;
     width: 100%;
 }
+
 .control.control-location input.input.is-large {
     text-align: center;
 }
+
 button.button.is-primary {
     max-width: 37%;
     width: 100%;
@@ -69,7 +83,7 @@ button.button.is-primary {
 }
 
 .fixRocket {
-    margin-left:10px;
+    margin-left: 10px;
 }
 
 .mainForm.container.has-text-centered {
@@ -83,6 +97,7 @@ button.button.is-primary {
 .results.container.has-text-centered {
     margin-top: 96px;
 }
+
 .hero-foot {
     margin-top: 96px;
 }
@@ -90,12 +105,8 @@ button.button.is-primary {
 .fixmymap {
     flex-wrap: wrap;
 }
+
 div#map {
     height: 335px;
     width: 100%;
-}
-
-.is-active {
-    background-color: blue;
-    border: 5px;
 }
