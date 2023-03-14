@@ -3,6 +3,7 @@
  //var ticketmasterApiKey = "";
 
  // Function to get events data from Ticketmaster API
+ /*
 function getEventsData(city, eventDateTime) {
     var ticketmaster_api_key = "MFEW1mtqUYUpqm9K3cP6Bg8VbI8KNxDF";
     var ticketmaster_api_url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketmaster_api_key}&city=${city}&startDateTime=${eventDateTime}&endDateTime=${eventDateTime}`;
@@ -27,6 +28,27 @@ function getEventsData(city, eventDateTime) {
       }
     });
   }
+  */
+
+  async function getEventsData(city, eventDateTime) {
+    const ticketmaster_api_key = "MFEW1mtqUYUpqm9K3cP6Bg8VbI8KNxDF";
+    const ticketmaster_api_url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketmaster_api_key}&city=${city}&startDateTime=${eventDateTime}&endDateTime=${eventDateTime}`;
   
+    try {
+        const response = await fetch(ticketmaster_api_url);
+        const data = await response.json();
+        
+        if (data._embedded && data._embedded.events && data._embedded.events.length > 0) {
+            const eventsData = data._embedded.events;
+            return eventsData;
+        } else {
+            console.log("No events found");
+            return [];
+        }
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
+}
   //test with 
   //getEventsData('London','2023-03-19T19:17:00Z');
