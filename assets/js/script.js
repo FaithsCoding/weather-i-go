@@ -15,6 +15,11 @@ jQuery(document).ready(function($) {
 // TODO: use dajys to convert the time provided from datepicker to be used in ticketmaster request.
 
 //This functions allows users to use their own geolocation instead of inputting one
+//testing card generator
+
+
+
+
 //var locationGet = $('#my-location');
 $('#appStart').on('submit', function(event){
   event.preventDefault();
