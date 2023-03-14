@@ -171,14 +171,15 @@
             'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js',
             //  '',
             'https://polyfill.io/v3/polyfill.min.js?features=default',
-
+            './assets/js/cards.js',
+            './assets/js/googelapi.js',
             './assets/js/errorhandler.js',
             './assets/js/modals.js',
             './assets/js/ticketmaster.js',
             './assets/js/weatherapi.js',
             './assets/js/script.js',
             './assets/js/googelapi.js',
-            './assets/js/cards.js',
+
           ];
 
           return Promise.all(scriptUrls.map(loadScript));
