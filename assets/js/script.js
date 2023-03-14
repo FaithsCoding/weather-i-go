@@ -40,7 +40,7 @@ $('#appStart').on('submit', function(event){
     console.log(getEventsData[i]);
 
  // event.preventDefault();
-  displayCards('EVENT'+ i +'YAY', getEventsData[i].venue.name, 'and the excerpto');
+  displayCards('EVENT'+ i +'YAY', getEventsData[i], 'and the excerpto');
    // console.log(getEventsData[i].venue.name);
   }
 
