@@ -15,7 +15,7 @@ function getEventsData(city, eventDateTime) {
         var venueLng = venue.location.longitude;
         var eventTime = Math.floor(new Date(eventDateTime).getTime() / 1000); // Convert event datetime to Unix timestamp in seconds
         console.log([venue, venueLat, venueLng, eventTime]);
-        console.log('STUPID RIHARDS : \n' + JSON.parse(data));
+        console.log('STUPID RIHARDS : \n' + JSON.stringify(data));
         return data;
         // weatherAPI(eventLongitude, eventLatitude, eventDateTime) // Get weather data for the event location and time
       } else {
