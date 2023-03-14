@@ -22,9 +22,16 @@ jQuery(document).ready(function($) {
 
 //var locationGet = $('#my-location');
 $('#appStart').on('submit', function(event){
-    event.preventDefault();
-    var locationInput = $('#location-input').val();
-    var dateTimeInput = $('#dateTime').val();
+  event.preventDefault();
+  var locationInput = $('#location-input').val();
+  var dateTimeInput = $('#dateTime').val();
+  var parseDateTime = Date.parse(dateTimeInput);
+  var dates = new Date(parseDateTime);
+  var fixedEventDate = dates.toISOString().substring(0, fixedEventDate.length - 1);
+  console.log(fixedEventDate);
+  // '2023-03-19T19:17:00Z'
+  console.log(getEventsData(locationInput, fixedEventDate));
+
 
 });
 // this is for the GET my LOCATION activity
