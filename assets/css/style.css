@@ -94,3 +94,8 @@ div#map {
     height: 335px;
     width: 100%;
 }
+
+.is-active {
+    background-color: blue;
+    border: 5px;
+}
