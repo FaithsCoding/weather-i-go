@@ -11,14 +11,14 @@ function getEventsData(city, eventDateTime) {
     $.get(ticketmaster_api_url, function(data) {
       // this part for weather from venue
       if (data._embedded && data._embedded.events && data._embedded.events.length > 0) {
-       // var venue = data._embedded.events[0]._embedded.venues[0]; // Get first event and its first venue
-       var venue = data._embedded.events[0];
-        var venueLat = venue.location.latitude;
-        var venueLng = venue.location.longitude;
+       var Eventvenue = data._embedded.events[0]._embedded.venues[0]; // Get first event and its first venue
+       var objectoForAllEvents = data._embedded.events[0];
+        var venueLat = Eventvenue.location.latitude;
+        var venueLng = Eventvenue.location.longitude;
         var eventTime = Math.floor(new Date(eventDateTime).getTime() / 1000); // Convert event datetime to Unix timestamp in seconds
-        console.log([venue, venueLat, venueLng, eventTime]);
+        console.log('All Data : \n '+ objectoForAllEvents + ' \n \n Venue :\n' + [Eventvenue, venueLat, venueLng, eventTime]);
        //console.log('STUPID RIHARDS : \n' + JSON.stringify(data));
-        return data._embedded.events[0];
+        return objectoForAllEvents;
         // weatherAPI(eventLongitude, eventLatitude, eventDateTime) // Get weather data for the event location and time
       } else {
         console.log("No events found");
