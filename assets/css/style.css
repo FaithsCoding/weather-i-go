@@ -32,7 +32,47 @@
     top: 50%!important;
     transform: translate(0px, -85%) rotate(45deg)!important;
 }
+.tooltip {
+    position: relative;
+  }
+  
+  .tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.2s, opacity 0.2s;
+  }
+  
+  .tooltip:hover::after {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+  
+  .tooltip {
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .tooltip i {
+    font-size: 60px;
+    margin-right: 200px;
+  }
 
+  
+    
 .rocket-forms {
     display: flex!important;
     flex-direction: row;

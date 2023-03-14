@@ -15,6 +15,10 @@
     <link href="
 https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.css
 " rel="stylesheet">
+<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+  
 
 </head>
 
@@ -91,7 +95,10 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
                           </div>
 
                           <div class="control control-usemy has-icons-left has-icons-right">
-                            <button id="map-button"><i class="fas fa-map-marker-alt"></i> My location</button>
+                          
+                            <button id="my-location" class="tooltip" data-tooltip="Use My Location"><i class="fa fa-map-marker-alt"aria-hidden="true" ></i> </button>
+
+
                             
                           </div>
                           
@@ -419,7 +426,8 @@ https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/css/bulma-calendar.min.c
                 var scriptUrls = [
                     'https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.19/dist/js/bulma-calendar.min.js',
                     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js',
-                  //  '',
+
+                     'https://code.jquery.com/ui/1.13.2/jquery-ui.min.js',
                     'https://polyfill.io/v3/polyfill.min.js?features=default',
                     
                     './assets/js/errorhandler.js',
