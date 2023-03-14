@@ -104,9 +104,11 @@ button.button.is-primary {
 
 .fixmymap {
     flex-wrap: wrap;
+    flex-direction: row;
 }
 
 div#map {
     height: 335px;
     width: 100%;
+    flex-direction: row;
 }
