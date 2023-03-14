@@ -112,3 +112,10 @@ div#map {
     width: 100%;
     flex-direction: row;
 }
+
+.hero.is-success .title {
+    color: #000;
+    text-align: left;
+    line-height: 1.15em!important;
+    font-weight: 300;
+}
