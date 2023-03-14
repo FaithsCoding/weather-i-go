@@ -25,14 +25,24 @@ $('#appStart').on('submit', function(event){
   event.preventDefault();
   var locationInput = $('#location-input').val();
   var dateTimeInput = $('#dateTime').val();
-  var parseDateTime = Date.parse(dateTimeInput);
-  var dates = new Date(parseDateTime);
-  var fixedEventDate = dates.toISOString().substring(0, (dates.length - 2));
-  console.log(fixedEventDate);
-  fixedEventDate += fixedEventDate + 'Z';
+  //var parseDateTime = Date.parse(dateTimeInput); // to unix
+  var dates = new Date(dateTimeInput);
+ // var testmeh = 
+  var fixedEventDate = dates.toISOString();
+  var fixedEventDate = fixedEventDate.slice(0, fixedEventDate.length - 5) + 'Z';
+  console.log('WAZZZAAAAAA :'+ dates + ' \n: ' + fixedEventDate);
+ // fixedEventDate += fixedEventDate + 'Z';
   // '2023-03-19T19:17:00Z'
   console.log(getEventsData(locationInput, fixedEventDate));
+  mapElement.style.display = 'initial';
+  // for each geteventsdata object loop over and log it
+  for (var i = 0; i < getEventsData.length; i++) {
+    console.log(getEventsData[i]);
 
+ // event.preventDefault();
+  displayCards();
+    
+  }
 
 });
 // this is for the GET my LOCATION activity
