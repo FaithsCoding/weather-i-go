@@ -27,8 +27,9 @@ $('#appStart').on('submit', function(event){
   var dateTimeInput = $('#dateTime').val();
   var parseDateTime = Date.parse(dateTimeInput);
   var dates = new Date(parseDateTime);
-  var fixedEventDate = dates.toISOString().substring(0, fixedEventDate.length - 1);
+  var fixedEventDate = dates.toISOString().substring(0, (dates.length - 1));
   console.log(fixedEventDate);
+  fixedEventDate = fixedEventDate + 'Z';
   // '2023-03-19T19:17:00Z'
   console.log(getEventsData(locationInput, fixedEventDate));
 
