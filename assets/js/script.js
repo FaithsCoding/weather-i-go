@@ -80,8 +80,15 @@ $('#appStart').on('submit', function(event){
           var weatherSunSet = openWeatherData.quickData.weatherSunSet;
     console.log('Weather Condition: '+weatherCondition+'\n Icon : '+ weatherIcon +' \n Temp :'+ weatherTemp+'\n Humidity : '+weatherHumidity +'\n Windspeed :'+ weatherWindSpeed +'\n Sunset :'+ weatherSunSet);
   
- 
-    displayCards(`${event.name}`,`${event.info}`,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
+    var infoed = '';
+ var descriptoi = event.description;
+ if(event.info){
+  var infoed = event.info;
+ }
+ if(event.description){
+  var descriptoi = event.description;
+ }
+    displayCards(`${event.name}`,infoed + '<br>' +descriptoi,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
       })
     .catch(error => {
     errorHandler(error);

@@ -180,3 +180,9 @@ ul.pagination-list {
     padding: 0px 15px;
     left: 0;
 }
+
+.card-info-box {
+    width: 100%;
+    text-align: left;
+    padding-bottom: 10px;
+}
