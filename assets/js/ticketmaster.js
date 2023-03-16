@@ -48,11 +48,12 @@ function getEventsData(city, eventDateTime) {
   //test with 
   //getEventsData('London','2023-03-19T19:17:00Z');
 
-  function getEventsData(city, eventDateTime) {
+  function getEventsData(city, eventDateTime, pageOffset = 0, pageLimit = 10) {
     var endtimed = eventDateTime.slice(0, eventDateTime.length - 9) + '23:59:59Z';
     var ticketmaster_api_key = "MFEW1mtqUYUpqm9K3cP6Bg8VbI8KNxDF";
-    var ticketmaster_api_url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketmaster_api_key}&city=${city}&startDateTime=${eventDateTime}&endDateTime=${endtimed}&includeTBA=yes&countryCode=GB&source=ticketmaster&locale=en-GB&sort=date,desc&offset=0&limit=50`;
-    
+    var ticketmaster_api_url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketmaster_api_key}&city=${city}&startDateTime=${eventDateTime}&endDateTime=${endtimed}&includeTBA=yes&countryCode=GB&source=ticketmaster&locale=en-GB&sort=date,desc&offset=${pageOffset}&limit=${pageLimit}`;
+    var givenPageOffset = pageOffset;
+    var perPage = pageLimit;
     return new Promise((resolve, reject) => {
       // Make API request to Ticketmaster API
       $.get(ticketmaster_api_url, function(data) {
@@ -72,7 +73,11 @@ function getEventsData(city, eventDateTime) {
               longitude: venueLng,
               //weather:  { data : weatherAPI(venueLng, venueLat, eventDateTime) },
             },
-            eventTime: eventTime
+            eventTime: eventTime,
+            eventPagination: {
+              givenPageOffset: givenPageOffset,
+              totalPages: Math.ceil(data._embedded.events.length / perPage)
+            }
           });
         } else {
           reject("No events found");
