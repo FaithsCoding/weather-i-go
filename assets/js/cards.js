@@ -51,6 +51,7 @@ const weatherDescription = weatherDescriptiono;
   const figcaption = document.createElement("figcaption");
   figcaption.innerHTML = weatherTemp + '"°"'+'<br>'+ '<span>'+weatherDescription+'</span>';
   figure2.appendChild(img2);
+  figure2.appendChild(figcaption);
   mediaLeft.appendChild(figure2);
  media.appendChild(mediaLeft);
 

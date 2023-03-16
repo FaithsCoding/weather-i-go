@@ -40,6 +40,7 @@ $('#appStart').on('submit', function(event){
   //console.log(resulted);  
   var currentLat = '';
   var currentLng = '';
+  jQuery('#card-container').html('');
   getEventsData(locationInput, fixedEventDate)
   .then(data => {
     console.log(data.events);
@@ -61,12 +62,12 @@ $('#appStart').on('submit', function(event){
    console.log(`Event Venue Latitude : ${event._embedded.venues[0].location['latitude']}`); 
    currentLat = event._embedded.venues[0].location['latitude'];
    console.log(`Event Venue Longitude : ${event._embedded.venues[0].location['longitude']}`);
-curentLng = event._embedded.venues[0].location['longitude'];
+   currentLng = event._embedded.venues[0].location['longitude'];
    console.log('-----------------------------------------------------');
 
    
 
-      weatherAPI(event._embedded.venues[0].location['longitude'], event._embedded.venues[0].location['latitude'], dateTimeInput)
+      weatherAPI(currentLng, currentLat, dateTimeInput)
       .then(openWeatherData => {
       
       console.log(openWeatherData);
@@ -79,7 +80,7 @@ curentLng = event._embedded.venues[0].location['longitude'];
           var weatherSunSet = openWeatherData.quickData.weatherSunSet;
     console.log('Weather Condition: '+weatherCondition+'\n Icon : '+ weatherIcon +' \n Temp :'+ weatherTemp+'\n Humidity : '+weatherHumidity +'\n Windspeed :'+ weatherWindSpeed +'\n Sunset :'+ weatherSunSet);
   
-    jQuery('#card-container').html('');
+ 
     displayCards(`${event.name}`,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
       })
     .catch(error => {

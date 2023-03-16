@@ -163,3 +163,7 @@ ul.pagination-list {
     justify-content: space-between;
     flex-wrap: wrap;
 }
+.media-left {
+    background: #0101017a;
+    border-radius: 50%;
+}
