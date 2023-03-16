@@ -68,7 +68,7 @@ Additionally, when the search button has been clicked their current location wil
 
 ##Video
 
-![](https://youtu.be/iKOcCV_ZBFY)
+![Video](https://youtu.be/iKOcCV_ZBFY)
 
 ##Screenshot
 
