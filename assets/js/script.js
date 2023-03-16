@@ -199,5 +199,13 @@ if (element) {
     $('#dateTime').val(datepicker.data.value());
 	});
 }
+var lightboxInlineIframe = GLightbox({
+  selector: '.glightbox4'
+});
+lightboxInlineIframe.on('open', (target) => {
+  console.log('lightbox opened');
+});
+
 
 });
+

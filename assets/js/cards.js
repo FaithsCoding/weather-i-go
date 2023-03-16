@@ -51,7 +51,8 @@ const weatherDescription = weatherDescriptiono;
   const figcaption = document.createElement("figcaption");
   figcaption.innerHTML = weatherTemp + '<b>°</b>'+'<br>'+ '<span>'+weatherDescription+'</span>';
   figure2.appendChild(img2);
-
+//var alternivativeIMG = '<div class="field is-grouped is-grouped-multiline"> <div class="control"> <div class="tags has-addons"><span class="tag is-grey-lighter"><img src="'+ weatherIcon+'"></span><span class="tag is-info">' + weatherTemp + '<b>°</b></span> </div></div>'
+//figure2.innerHTML = alternivativeIMG;
   mediaLeft.appendChild(figure2);
   mediaLeft.appendChild(figcaption);
  media.appendChild(mediaLeft);
@@ -73,10 +74,10 @@ const weatherDescription = weatherDescriptiono;
   // create card body element
   const cardBody = document.createElement("div");
   cardBody.classList.add("content");
-  cardBody.innerHTML = '<a class="button is-primary" href="'+ eventExcerpt +'"> Get Tickets</a>';
+  cardBody.innerHTML = '<a class="button is-primary glightbox4" href="'+ eventExcerpt +'"> Get Tickets</a>';
   const time = document.createElement("time");
   time.setAttribute("datetime", eventDate);
-  time.textContent = eventTime +" - " + eventDate;
+  time.textContent = "<div class='timed'>"+eventTime +"</div><div class='dated'>" + eventDate +"</div>";
   cardBody.appendChild(time);
   cardContent.appendChild(cardBody);
 
