@@ -109,7 +109,7 @@ $('#appStart').on('submit load', function(event){
  var localStorageEntry = JSON.stringify(submitHistory);
 
     displayCards(`${event.name}`, ''+ infoed + '<br>' + descriptoi,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
-    localStorage.setItem(localStorageEntry);
+    localStorage.setItem('history', localStorageEntry);
   })
     .catch(error => {
     errorHandler(error);
