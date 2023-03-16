@@ -81,7 +81,7 @@ $('#appStart').on('submit', function(event){
     console.log('Weather Condition: '+weatherCondition+'\n Icon : '+ weatherIcon +' \n Temp :'+ weatherTemp+'\n Humidity : '+weatherHumidity +'\n Windspeed :'+ weatherWindSpeed +'\n Sunset :'+ weatherSunSet);
   
  
-    displayCards(`${event.name}`,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
+    displayCards(`${event.name}`,`${event.info}`,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
       })
     .catch(error => {
     errorHandler(error);

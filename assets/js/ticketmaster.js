@@ -51,7 +51,7 @@ function getEventsData(city, eventDateTime) {
   function getEventsData(city, eventDateTime) {
     var endtimed = eventDateTime.slice(0, eventDateTime.length - 9) + '23:59:59Z';
     var ticketmaster_api_key = "MFEW1mtqUYUpqm9K3cP6Bg8VbI8KNxDF";
-    var ticketmaster_api_url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketmaster_api_key}&city=${city}&startDateTime=${eventDateTime}&endDateTime=${endtimed}`;
+    var ticketmaster_api_url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketmaster_api_key}&city=${city}&startDateTime=${eventDateTime}&endDateTime=${endtimed}&includeTBA=yes&countryCode=GB&source=ticketmaster&locale=en-GB&sort=date,desc&offset=0&limit=50`;
     
     return new Promise((resolve, reject) => {
       // Make API request to Ticketmaster API

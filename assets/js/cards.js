@@ -4,7 +4,7 @@ const titleInput = document.getElementById("title-input");
 const bodyInput = document.getElementById("body-input");
 const cardContainer = document.getElementById("card-container");
 */
-function displayCards(eventoTitlo, dasVenue, leExcerpto, localDate, localTime, eventImageUrl, weatherIconUrl, weatherTempo, weatherDescriptiono) {
+function displayCards(eventoTitlo, evventoINFO, dasVenue, leExcerpto, localDate, localTime, eventImageUrl, weatherIconUrl, weatherTempo, weatherDescriptiono) {
   // create new card element
   const eventTitle = eventoTitlo;
   const eventVenue = dasVenue;
@@ -15,7 +15,7 @@ const eventImg = eventImageUrl;
 const weatherIcon = weatherIconUrl;
 const weatherTemp = weatherTempo;
 const weatherDescription = weatherDescriptiono;
-
+const eventInfoo = evventoINFO;
 
 
   const card = document.createElement("div");
@@ -74,7 +74,7 @@ const weatherDescription = weatherDescriptiono;
   // create card body element
   const cardBody = document.createElement("div");
   cardBody.classList.add("content");
-  cardBody.innerHTML = '<a class="button is-primary glightbox4" href="'+ eventExcerpt +'"> Get Tickets</a>';
+  cardBody.innerHTML = '<div class="card-info-box">'+ eventInfoo +'</div><a class="button is-primary glightbox4" href="'+ eventExcerpt +'"> Get Tickets</a>';
   const time = document.createElement("time");
   time.setAttribute("datetime", eventDate);
   time.innerHTML = "<div class='timed'>"+eventTime +"</div><div class='dated'>" + eventDate +"</div>";
