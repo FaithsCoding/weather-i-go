@@ -4,7 +4,7 @@ const titleInput = document.getElementById("title-input");
 const bodyInput = document.getElementById("body-input");
 const cardContainer = document.getElementById("card-container");
 */
-function displayCards(eventoTitlo, dasVenue, leExcerpto, localDate, localTime, eventImageUrl, weatherIconUrl, weatherTempo, weatherDescription) {
+function displayCards(eventoTitlo, dasVenue, leExcerpto, localDate, localTime, eventImageUrl, weatherIconUrl, weatherTempo, weatherDescriptiono) {
   // create new card element
   const eventTitle = eventoTitlo;
   const eventVenue = dasVenue;
@@ -14,7 +14,7 @@ const eventTime = localTime;
 const eventImg = eventImageUrl;
 const weatherIcon = weatherIconUrl;
 const weatherTemp = weatherTempo;
-const weatherDescription = weatherDescription;
+const weatherDescription = weatherDescriptiono;
 
 
 
