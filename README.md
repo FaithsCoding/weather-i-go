@@ -73,6 +73,9 @@ Additionally, when the search button has been clicked their current location wil
 ##Screenshot
 
 ![Screenshot 2023-03-16 at 18 27 49](https://user-images.githubusercontent.com/122907573/225718337-590da48d-7040-4da2-a10b-acad6bb5553c.png)
+##Screenshot
+
+![Screenshot](example.gif)
 
 
 ##Overall
