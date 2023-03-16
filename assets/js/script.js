@@ -91,8 +91,25 @@ $('#appStart').on('submit load', function(event){
  if(event.description){
   var descriptoi = event.description;
  }
+
+ var submitHistory =  {
+  locationInput: locationInput,
+  dateTimeInput: dateTimeInput,
+  weatherCondition: weatherCondition,
+  weatherIcon: weatherIcon,
+  weatherTemp: weatherTemp,
+  weatherHumidity: weatherHumidity,
+  weatherWindSpeed: weatherWindSpeed,
+  weatherSunSet: weatherSunSet,
+  infoed: infoed,
+  descriptoi: descriptoi,
+  locationLat: currentLat,
+  locationLng: currentLng,
+ }
+ var localStorageEntry = JSON.stringify(submitHistory);
+
     displayCards(`${event.name}`, ''+ infoed + '<br>' + descriptoi,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
-  
+    localStorage.setItem(localStorageEntry);
   })
     .catch(error => {
     errorHandler(error);
