@@ -170,11 +170,13 @@ ul.pagination-list {
     flex-direction: row;
     align-items: center;
     align-content: flex-start;
-    font-size: 10px;
+    font-size: 12px;
     text-align: left;
     position: absolute;
     top: 0;
-    background: white;
-    padding: 15px;
+    color:white;
+    font-weight:500;
+    background: #1dd1b2;
+    padding: 0px 15px;
     left: 0;
 }
