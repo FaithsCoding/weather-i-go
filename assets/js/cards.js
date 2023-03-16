@@ -4,14 +4,13 @@ const titleInput = document.getElementById("title-input");
 const bodyInput = document.getElementById("body-input");
 const cardContainer = document.getElementById("card-container");
 */
-function displayCards(eventoTitlo, dasVenue, leExcerpto, localDate, localTime, venueImgUrl, eventImageUrl) {
+function displayCards(eventoTitlo, dasVenue, leExcerpto, localDate, localTime, eventImageUrl) {
   // create new card element
   const eventTitle = eventoTitlo;
   const eventVenue = dasVenue;
   const eventExcerpt = leExcerpto;
   const eventDate = localDate;
 const eventTime = localTime;
-const venueImg = venueImgUrl;
 const eventImg = eventImageUrl;
   const card = document.createElement("div");
   card.classList.add("column", "is-4", "card");

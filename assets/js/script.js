@@ -62,7 +62,7 @@ $('#appStart').on('submit', function(event){
 curentLng = event._embedded.venues[0].location['longitude'];
    console.log('-----------------------------------------------------');
 
-   displayCards(`${event.name}`,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,` ${event._embedded.venues[0].images[0].url}`,`${event.images[0].url}`);
+   displayCards(`${event.name}`,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`);
 
       weatherAPI(event._embedded.venues[0].location['longitude'], event._embedded.venues[0].location['latitude'], dateTimeInput)
       .then(openWeatherData => {
