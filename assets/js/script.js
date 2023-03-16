@@ -74,14 +74,18 @@ $('#appStart').on('submit load', function(event){
     console.log(`Event Venue Name : ${event._embedded.venues[0].name}`);
     console.log(`Event Venue City : ${event._embedded.venues[0].city.name}`);
     console.log(`Event Venue Country : ${event._embedded.venues[0].country.name}`);
-    if(event._embedded.venues[0].location['latitude']){
+    if(event._embedded.venues[0].location){
       console.log(`Event Venue Latitude : ${event._embedded.venues[0].location['latitude']}`); 
       currentLat = event._embedded.venues[0].location['latitude'];
       
+    }else{
+      
     }
-if( event._embedded.venues[0].location['longitude']){
+if( event._embedded.venues[0].location){
   console.log(`Event Venue Longitude : ${event._embedded.venues[0].location['longitude']}`);
   currentLng = event._embedded.venues[0].location['longitude'];
+}else{
+
 }
 
    console.log('-----------------------------------------------------');
