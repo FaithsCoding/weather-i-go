@@ -18,19 +18,19 @@ jQuery(document).ready(function($) {
 //testing card generator
 
 
-$('#location-input').on('click', function() {
+//$('#location-input').on('click', function() {
   //show dropdown with data from localstorage parsed from JSON
-  var storedData = JSON.parse(localStorage.getItem('history'));
+  //var storedData = JSON.parse(localStorage.getItem('history'));
 
   //change input from text to a dropdown list from the storedData
-  $('#location-input').append('<option value="' + storedData.dateTimeInput.locationInput + '">' + storedData.dateTimeInput.locationInput + '</option>');
+  //$('#location-input').append('<option value="' + storedData.dateTimeInput.locationInput + '">' + storedData.dateTimeInput.locationInput + '</option>');
   //append the dropdown list to the location-input
  // $('#location-input').append(dropdownList);
- $('#location-input').after('<select id="location-input2" name="txtQuantity" class="input is-large is-focused  is-rounded">' +
-          '<option value="1">Search for a city/place or click "Use my location" button! </option>' +
-          '<option value="' + storedData.dateTimeInput.locationInput + '">' + storedData.dateTimeInput.locationInput + '</option>' +
-        '</select>');
-})
+ //$('#location-input').after('<select id="location-input2" name="txtQuantity" class="input is-large is-focused  is-rounded">' +
+  //        '<option value="1">Search for a city/place or click "Use my location" button! </option>' +
+  //        '<option value="' + storedData.dateTimeInput.locationInput + '">' + storedData.dateTimeInput.locationInput + '</option>' +
+   //     '</select>');
+//})
 
 //var locationGet = $('#my-location');
 $('#appStart').on('submit load', function(event){
