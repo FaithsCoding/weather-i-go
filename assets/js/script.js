@@ -81,14 +81,14 @@ $('#appStart').on('submit', function(event){
     console.log('Weather Condition: '+weatherCondition+'\n Icon : '+ weatherIcon +' \n Temp :'+ weatherTemp+'\n Humidity : '+weatherHumidity +'\n Windspeed :'+ weatherWindSpeed +'\n Sunset :'+ weatherSunSet);
   
     var infoed = '';
- var descriptoi = event.description;
+ var descriptoi = '';
  if(event.info){
   var infoed = event.info;
  }
  if(event.description){
   var descriptoi = event.description;
  }
-    displayCards(`${event.name}`,infoed + '<br>' +descriptoi,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
+    displayCards(`${event.name}`, ''+ infoed + '<br>' + descriptoi,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
       })
     .catch(error => {
     errorHandler(error);
