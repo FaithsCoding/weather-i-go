@@ -118,4 +118,11 @@ div#map {
     text-align: left;
     line-height: 1.15em!important;
     font-weight: 300;
+    font-size: 125%;
+    font-weight: 700;
+}
+
+.hero.is-success .card .subtitle {
+    color: darkgrey;
+    text-align: left;
 }

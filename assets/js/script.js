@@ -62,26 +62,26 @@ $('#appStart').on('submit', function(event){
 curentLng = event._embedded.venues[0].location['longitude'];
    console.log('-----------------------------------------------------');
 
-   displayCards(`${event.name}`,`${event._embedded.venues[0].name}`,`${event.url}`);
+   displayCards(`${event.name}`,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,` ${event._embedded.venues[0].images[0].url}`,`${event.images[0].url}`);
 
-   weatherAPI(event._embedded.venues[0].location['longitude'], event._embedded.venues[0].location['latitude'], dateTimeInput)
-  .then(openWeatherData => {
-   
-   console.log(openWeatherData);
-     // Select which responses of the aquired data from openweathermap API that we want
-var weatherCondition = openWeatherData.quickData.weatherCondition;
-var weatherIcon = openWeatherData.quickData.weatherIcon;
-var weatherTemp = openWeatherData.quickData.weatherTemp;
-var weatherHumidity = openWeatherData.quickData.weatherHumidity;
-var weatherWindSpeed = openWeatherData.quickData.weatherWindSpeed;
-var weatherSunSet = openWeatherData.quickData.weatherSunSet;
-console.log('Weather Condition: '+weatherCondition+'\n Icon : '+ weatherIcon +' \n Temp :'+ weatherTemp+'\n Humidity : '+weatherHumidity +'\n Windspeed :'+ weatherWindSpeed +'\n Sunset :'+ weatherSunSet);
-   
-  })
-.catch(error => {
-errorHandler(error);
-console.error(error);
- });
+      weatherAPI(event._embedded.venues[0].location['longitude'], event._embedded.venues[0].location['latitude'], dateTimeInput)
+      .then(openWeatherData => {
+      
+      console.log(openWeatherData);
+        // Select which responses of the aquired data from openweathermap API that we want
+          var weatherCondition = openWeatherData.quickData.weatherCondition;
+          var weatherIcon = openWeatherData.quickData.weatherIcon;
+          var weatherTemp = openWeatherData.quickData.weatherTemp;
+          var weatherHumidity = openWeatherData.quickData.weatherHumidity;
+          var weatherWindSpeed = openWeatherData.quickData.weatherWindSpeed;
+          var weatherSunSet = openWeatherData.quickData.weatherSunSet;
+    console.log('Weather Condition: '+weatherCondition+'\n Icon : '+ weatherIcon +' \n Temp :'+ weatherTemp+'\n Humidity : '+weatherHumidity +'\n Windspeed :'+ weatherWindSpeed +'\n Sunset :'+ weatherSunSet);
+      
+      })
+    .catch(error => {
+    errorHandler(error);
+    console.error(error);
+    });
 
  
   }

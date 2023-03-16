@@ -4,12 +4,15 @@ const titleInput = document.getElementById("title-input");
 const bodyInput = document.getElementById("body-input");
 const cardContainer = document.getElementById("card-container");
 */
-function displayCards(eventoTitlo, dasVenue, leExcerpto) {
+function displayCards(eventoTitlo, dasVenue, leExcerpto, localDate, localTime, venueImgUrl, eventImageUrl) {
   // create new card element
   const eventTitle = eventoTitlo;
   const eventVenue = dasVenue;
   const eventExcerpt = leExcerpto;
-
+  const eventDate = localDate;
+const eventTime = localTime;
+const venueImg = venueImgUrl;
+const eventImg = eventImageUrl;
   const card = document.createElement("div");
   card.classList.add("column", "is-4", "card");
 
@@ -19,8 +22,8 @@ function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   const figure = document.createElement("figure");
   figure.classList.add("image", "is-4by3");
   const img = document.createElement("img");
-  img.setAttribute("src", "https://placehold.co/1280x960?font=roboto&text="+eventTitle);
-  img.setAttribute("alt", "Placeholder image");
+  img.setAttribute("src", eventImg);
+  img.setAttribute("alt", eventTitle);
   figure.appendChild(img);
   cardImage.appendChild(figure);
 
@@ -38,8 +41,8 @@ function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   const figure2 = document.createElement("figure");
   figure2.classList.add("image", "is-48x48");
   const img2 = document.createElement("img");
-  img2.setAttribute("src", "https://bulma.io/images/placeholders/96x96.png");
-  img2.setAttribute("alt", "Placeholder image");
+  img2.setAttribute("src", venueImg);
+  img2.setAttribute("alt", eventVenue);
   figure2.appendChild(img2);
   mediaLeft.appendChild(figure2);
   media.appendChild(mediaLeft);
@@ -63,8 +66,8 @@ function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   cardBody.classList.add("content");
   cardBody.textContent = eventExcerpt;
   const time = document.createElement("time");
-  time.setAttribute("datetime", "2016-1-1");
-  time.textContent = "11:09 PM - 1 Jan 2016";
+  time.setAttribute("datetime", eventDate);
+  time.textContent = eventTime +" - " + eventDate;
   cardBody.appendChild(time);
   cardContent.appendChild(cardBody);
 
