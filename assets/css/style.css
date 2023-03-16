@@ -165,5 +165,16 @@ ul.pagination-list {
 }
 .media-left {
     background: #0101017a;
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: flex-start;
+    font-size: 10px;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    background: white;
+    padding: 15px;
+    left: 0;
 }

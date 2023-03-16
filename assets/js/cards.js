@@ -44,15 +44,16 @@ const weatherDescription = weatherDescriptiono;
  const mediaLeft = document.createElement("div");
   mediaLeft.classList.add("media-left");
   const figure2 = document.createElement("figure");
-  figure2.classList.add("image", "is-48x48");
+  figure2.classList.add("image", "is-64x64");
   const img2 = document.createElement("img");
   img2.setAttribute("src", weatherIcon);
   img2.setAttribute("alt", weatherTemp + "°");
   const figcaption = document.createElement("figcaption");
-  figcaption.innerHTML = weatherTemp + '"°"'+'<br>'+ '<span>'+weatherDescription+'</span>';
+  figcaption.innerHTML = weatherTemp + '<b>°</b>'+'<br>'+ '<span>'+weatherDescription+'</span>';
   figure2.appendChild(img2);
-  figure2.appendChild(figcaption);
+
   mediaLeft.appendChild(figure2);
+  mediaLeft.appendChild(figcaption);
  media.appendChild(mediaLeft);
 
   // create media content element
