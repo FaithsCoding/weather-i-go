@@ -18,7 +18,10 @@ jQuery(document).ready(function($) {
 //testing card generator
 
 
-
+$('#location-input').on('click', function() {
+  //show dropdown with data from localstorage parsed from JSON
+  var storedData = JSON.parse(localStorage.getItem('storedData'));
+})
 
 //var locationGet = $('#my-location');
 $('#appStart').on('submit load', function(event){
@@ -93,6 +96,7 @@ $('#appStart').on('submit load', function(event){
  }
 
  var submitHistory =  {
+  
   dateTimeInput : {
     locationInput: locationInput,
     dateTimeInput: dateTimeInput,
