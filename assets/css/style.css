@@ -135,3 +135,29 @@ div#map {
     align-content: space-around;
     justify-content: space-between;
 }
+
+.columns.is-mobile>.column.is-4 {
+    flex: none;
+    width: 31.33333%!important;
+    margin: 0.5%;
+}
+#card-container {
+    display: flex;
+    justify-content: space-between!important;
+}
+
+.card .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.card-content {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

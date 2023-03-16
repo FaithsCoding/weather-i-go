@@ -63,7 +63,7 @@ const eventImg = eventImageUrl;
   // create card body element
   const cardBody = document.createElement("div");
   cardBody.classList.add("content");
-  cardBody.textContent = eventExcerpt;
+  cardBody.innerHTML = '<a class="button is-primary" href="'+ eventExcerpt +'"> Get Tickets</a>';
   const time = document.createElement("time");
   time.setAttribute("datetime", eventDate);
   time.textContent = eventTime +" - " + eventDate;
@@ -89,6 +89,6 @@ formSubmitButton.addEventListener("click", (event) => {
 //This shows the map which has been hidden
 mapElement.style.display = 'initial';
  // event.preventDefault();
-  displayCards();
+  //displayCards();
   
 });
