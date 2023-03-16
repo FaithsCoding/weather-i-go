@@ -161,7 +161,7 @@ function showPosition(position) {
        var citynamed = openWeatherData.weatherData.name;
        console.log('CityName : '+ citynamed);
        $('#location-input').val(citynamed);
-       modalFactory('GettingLocation', 'These are your location Coordinates', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude + '<br>' + 'City : '+ citynamed + '', true);
+       modalFactory('GettingLocation', 'Your City is: '+ citynamed, 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude + '<br>' + 'City : '+ citynamed, true);
        
       });
     
