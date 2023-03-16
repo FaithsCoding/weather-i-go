@@ -1,9 +1,9 @@
 # weather-i-go
 
-##Deployed URL: https://faithscoding.github.io/weather-i-go/
-##GitHub URL: https://github.com/FaithsCoding/weather-i-go
+## Deployed URL: https://faithscoding.github.io/weather-i-go/   
+## GitHub URL: https://github.com/FaithsCoding/weather-i-go   
 
-##Project Description
+## Project Description
 For our first project we have created an events app. 
 
 "Weather I Go" is going to allow users to search for a city, type of event, genres, date and time of event, price range, And find events that fit within their given parameters using data from the ticketmaster API, then using weather API, so the user can also see what the weather is like on that day.
@@ -67,19 +67,19 @@ When the user has completed their input then this will show them cards with the 
 Additionally, when the search button has been clicked their current location will be displayed using Goggle Maps. 
 ```
 
-##Video
+## Video
 
 ![Video](https://youtu.be/iKOcCV_ZBFY)
 
-##Screenshot
+## Screenshot
 
 ![Screenshot 2023-03-16 at 18 27 49](https://user-images.githubusercontent.com/122907573/225718337-590da48d-7040-4da2-a10b-acad6bb5553c.png)
 ##Screenshot
 
-![Screenshot](example.gif)
+![Screenshot](https://s10.gifyu.com/images/example79c9bffcdc40e8f2.gif)
 
 
-##Overall
+## Overall
 ```
 We have made a good app in a short time considering it was our first time collaborating. This project has a lot of scalability therefore given more time I believe this could be an app that would be useful to a wide variety of people. 
 ```
@@ -88,7 +88,7 @@ We have made a good app in a short time considering it was our first time collab
 
 https://docs.google.com/presentation/d/1aNNbtdaPl7awkzjnvKA-2G4kHMTIg4iwBegITmMp4gE/edit#slide=id.g21c2ec0a254_0_1873
 
-##Creators
+## Creators
           <li><a href="https://github.com/Jake-Orch">Jake Orchard</a></li>
           <li><a href="https://github.com/dexit">Rihards 'dExIT' Mantejs</a></li>
           <li><a href="https://github.com/Adinahidan">Adina Hidan</a></li>
