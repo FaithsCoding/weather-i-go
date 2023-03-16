@@ -113,9 +113,81 @@ div#map {
     flex-direction: row;
 }
 
-.hero.is-success .title {
+.hero.is-success .card .title {
     color: #000;
     text-align: left;
     line-height: 1.15em!important;
     font-weight: 300;
+    font-size: 125%;
+    font-weight: 700;
+}
+
+.hero.is-success .card .subtitle {
+    color: darkgrey;
+    text-align: left;
+}
+
+.hero.is-fullheight .hero-body, .hero.is-fullheight-with-navbar .hero-body, .hero.is-halfheight .hero-body {
+    align-items: stretch!important;
+    display: flex;
+    flex-direction: column;
+    padding: 0!Important;
+    align-content: space-around;
+    justify-content: space-between;
+}
+
+.columns.is-mobile>.column.is-4 {
+    flex: none;
+    width: 31.33333%!important;
+    margin: 0.5%;
+}
+#card-container {
+    display: flex;
+    justify-content: space-evenly!important;
+}
+ul.pagination-list {
+    display: none;
+}
+.card .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.card-content {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav.pagination.is-rounded {
+    display: none;
+}
+.media-left {
+    background: #0101017a;
+    /* border-radius: 50%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: flex-start;
+    font-size: 12px;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    color:white;
+    font-weight:500;
+    background: #1dd1b2;
+    padding: 0px 15px;
+    left: 0;
+}
+
+.card-info-box {
+    width: 100%;
+    text-align: left;
+    padding-bottom: 10px;
+    font-size: 80%;
+    white-space: pre-wrap;
 }

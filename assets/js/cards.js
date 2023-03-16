@@ -4,11 +4,19 @@ const titleInput = document.getElementById("title-input");
 const bodyInput = document.getElementById("body-input");
 const cardContainer = document.getElementById("card-container");
 */
-function displayCards(eventoTitlo, dasVenue, leExcerpto) {
+function displayCards(eventoTitlo, evventoINFO, dasVenue, leExcerpto, localDate, localTime, eventImageUrl, weatherIconUrl, weatherTempo, weatherDescriptiono) {
   // create new card element
   const eventTitle = eventoTitlo;
   const eventVenue = dasVenue;
   const eventExcerpt = leExcerpto;
+  const eventDate = localDate;
+const eventTime = localTime;
+const eventImg = eventImageUrl;
+const weatherIcon = weatherIconUrl;
+const weatherTemp = weatherTempo;
+const weatherDescription = weatherDescriptiono;
+const eventInfoo = evventoINFO;
+
 
   const card = document.createElement("div");
   card.classList.add("column", "is-4", "card");
@@ -19,8 +27,8 @@ function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   const figure = document.createElement("figure");
   figure.classList.add("image", "is-4by3");
   const img = document.createElement("img");
-  img.setAttribute("src", "https://placehold.co/1280x960?font=roboto&text="+eventTitle);
-  img.setAttribute("alt", "Placeholder image");
+  img.setAttribute("src", eventImg);
+  img.setAttribute("alt", eventTitle);
   figure.appendChild(img);
   cardImage.appendChild(figure);
 
@@ -33,16 +41,21 @@ function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   media.classList.add("media");
 
   // create media left element
-  const mediaLeft = document.createElement("div");
+ const mediaLeft = document.createElement("div");
   mediaLeft.classList.add("media-left");
   const figure2 = document.createElement("figure");
-  figure2.classList.add("image", "is-48x48");
+  figure2.classList.add("image", "is-64x64");
   const img2 = document.createElement("img");
-  img2.setAttribute("src", "https://bulma.io/images/placeholders/96x96.png");
-  img2.setAttribute("alt", "Placeholder image");
+  img2.setAttribute("src", weatherIcon);
+  img2.setAttribute("alt", weatherTemp + "°");
+  const figcaption = document.createElement("figcaption");
+  figcaption.innerHTML = weatherTemp + '<b>°</b>'+'<br>'+ '<span>'+weatherDescription+'</span>';
   figure2.appendChild(img2);
+//var alternivativeIMG = '<div class="field is-grouped is-grouped-multiline"> <div class="control"> <div class="tags has-addons"><span class="tag is-grey-lighter"><img src="'+ weatherIcon+'"></span><span class="tag is-info">' + weatherTemp + '<b>°</b></span> </div></div>'
+//figure2.innerHTML = alternivativeIMG;
   mediaLeft.appendChild(figure2);
-  media.appendChild(mediaLeft);
+  mediaLeft.appendChild(figcaption);
+ media.appendChild(mediaLeft);
 
   // create media content element
   const mediaContent = document.createElement("div");
@@ -61,10 +74,10 @@ function displayCards(eventoTitlo, dasVenue, leExcerpto) {
   // create card body element
   const cardBody = document.createElement("div");
   cardBody.classList.add("content");
-  cardBody.textContent = eventExcerpt;
+  cardBody.innerHTML = '<div class="card-info-box">'+ eventInfoo +'</div><a class="button is-primary glightbox4" href="'+ eventExcerpt +'" target="_blank"> Get Tickets</a>';
   const time = document.createElement("time");
-  time.setAttribute("datetime", "2016-1-1");
-  time.textContent = "11:09 PM - 1 Jan 2016";
+  time.setAttribute("datetime", eventDate);
+  time.innerHTML = "<div class='timed'>"+eventTime +"</div><div class='dated'>" + eventDate +"</div>";
   cardBody.appendChild(time);
   cardContent.appendChild(cardBody);
 
@@ -87,6 +100,6 @@ formSubmitButton.addEventListener("click", (event) => {
 //This shows the map which has been hidden
 mapElement.style.display = 'initial';
  // event.preventDefault();
-  displayCards();
+  //displayCards();
   
 });

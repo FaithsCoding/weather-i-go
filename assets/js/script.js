@@ -18,11 +18,24 @@ jQuery(document).ready(function($) {
 //testing card generator
 
 
+//$('#location-input').on('click', function() {
+  //show dropdown with data from localstorage parsed from JSON
+  //var storedData = JSON.parse(localStorage.getItem('history'));
 
+  //change input from text to a dropdown list from the storedData
+  //$('#location-input').append('<option value="' + storedData.dateTimeInput.locationInput + '">' + storedData.dateTimeInput.locationInput + '</option>');
+  //append the dropdown list to the location-input
+ // $('#location-input').append(dropdownList);
+ //$('#location-input').after('<select id="location-input2" name="txtQuantity" class="input is-large is-focused  is-rounded">' +
+  //        '<option value="1">Search for a city/place or click "Use my location" button! </option>' +
+  //        '<option value="' + storedData.dateTimeInput.locationInput + '">' + storedData.dateTimeInput.locationInput + '</option>' +
+   //     '</select>');
+//})
 
 //var locationGet = $('#my-location');
-$('#appStart').on('submit', function(event){
+$('#appStart').on('submit load', function(event){
   event.preventDefault();
+ 
   var locationInput = $('#location-input').val();
   var dateTimeInput = $('#dateTime').val();
   //var parseDateTime = Date.parse(dateTimeInput); // to unix
@@ -39,11 +52,16 @@ $('#appStart').on('submit', function(event){
   //console.log(resulted);  
   var currentLat = '';
   var currentLng = '';
+  jQuery('#card-container').html('');
   getEventsData(locationInput, fixedEventDate)
   .then(data => {
     console.log(data.events);
     // Use event data here
-    for (let i = 0; i < data.events.length; i++) {
+    if(data.events.length > 0){ 
+      var eventPaginationTotal = data.events.length;
+      var currentPagination = data.eventPagination.givenPageOffset;
+      var totalpages = data.eventPagination.totalPages;
+    for (let i = 0; i < data.events.length - 1; i++) {
       const event = data.events[i];
 
     
@@ -56,34 +74,61 @@ $('#appStart').on('submit', function(event){
     console.log(`Event Venue Name : ${event._embedded.venues[0].name}`);
     console.log(`Event Venue City : ${event._embedded.venues[0].city.name}`);
     console.log(`Event Venue Country : ${event._embedded.venues[0].country.name}`);
-   console.log(`Event Venue Latitude : ${event._embedded.venues[0].location['latitude']}`); 
-   currentLat = event._embedded.venues[0].location['latitude'];
-   console.log(`Event Venue Longitude : ${event._embedded.venues[0].location['longitude']}`);
-curentLng = event._embedded.venues[0].location['longitude'];
+    if(event._embedded.venues[0].location){
+      console.log(`Event Venue Latitude : ${event._embedded.venues[0].location['latitude']}`); 
+      currentLat = event._embedded.venues[0].location['latitude'];
+      
+    }else{
+      
+    }
+if( event._embedded.venues[0].location){
+  console.log(`Event Venue Longitude : ${event._embedded.venues[0].location['longitude']}`);
+  currentLng = event._embedded.venues[0].location['longitude'];
+}else{
+
+}
+
    console.log('-----------------------------------------------------');
 
-   displayCards(`${event.name}`,`${event._embedded.venues[0].name}`,`${event.url}`);
+   
 
-   weatherAPI(event._embedded.venues[0].location['longitude'], event._embedded.venues[0].location['latitude'], dateTimeInput)
-  .then(openWeatherData => {
-   
-   console.log(openWeatherData);
-     // Select which responses of the aquired data from openweathermap API that we want
-var weatherCondition = openWeatherData.quickData.weatherCondition;
-var weatherIcon = openWeatherData.quickData.weatherIcon;
-var weatherTemp = openWeatherData.quickData.weatherTemp;
-var weatherHumidity = openWeatherData.quickData.weatherHumidity;
-var weatherWindSpeed = openWeatherData.quickData.weatherWindSpeed;
-var weatherSunSet = openWeatherData.quickData.weatherSunSet;
-console.log('Weather Condition: '+weatherCondition+'\n Icon : '+ weatherIcon +' \n Temp :'+ weatherTemp+'\n Humidity : '+weatherHumidity +'\n Windspeed :'+ weatherWindSpeed +'\n Sunset :'+ weatherSunSet);
-   
+      weatherAPI(currentLng, currentLat, dateTimeInput)
+      .then(openWeatherData => {
+      
+      console.log(openWeatherData);
+        // Select which responses of the aquired data from openweathermap API that we want
+          var weatherCondition = openWeatherData.quickData.weatherCondition;
+          var weatherIcon = openWeatherData.quickData.weatherIcon;
+          var weatherTemp = openWeatherData.quickData.weatherTemp;
+          var weatherHumidity = openWeatherData.quickData.weatherHumidity;
+          var weatherWindSpeed = openWeatherData.quickData.weatherWindSpeed;
+          var weatherSunSet = openWeatherData.quickData.weatherSunSet;
+    console.log('Weather Condition: '+weatherCondition+'\n Icon : '+ weatherIcon +' \n Temp :'+ weatherTemp+'\n Humidity : '+weatherHumidity +'\n Windspeed :'+ weatherWindSpeed +'\n Sunset :'+ weatherSunSet);
+  
+    var infoed = '';
+ var descriptoi = '';
+ if(event.info){
+  var infoed = event.info;
+ }
+ if(event.description){
+  var descriptoi = event.description;
+ }
+
+
+ //var localStorageEntry = JSON.stringify(submitHistory);
+
+    displayCards(`${event.name}`, ''+ infoed + '<br>' + descriptoi,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
+    //var history2 = localStorage.getItem('history');
+    localStorage.setItem('history', locationInput);
   })
-.catch(error => {
-errorHandler(error);
-console.error(error);
- });
+    .catch(error => {
+    errorHandler(error);
+    console.error(error);
+    });
 
- 
+  }
+  }else{
+    errorHandler('No Events Found');
   }
   })
   .catch(error => {
@@ -141,8 +186,7 @@ $('#my-location').on('click', function(event){
       //
         
       navigator.geolocation.getCurrentPosition(function(position) {
-        modalFactory('LocationTest', 'Testing location', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
-      console.log("Latitude: " + position.coords.latitude);
+        console.log("Latitude: " + position.coords.latitude);
         console.log("Longitude: " + position.coords.longitude);
       });
     } else {
@@ -151,12 +195,27 @@ $('#my-location').on('click', function(event){
     }
 });
 function showPosition(position) {
-    modalFactory('LocationTest', 'Testing location', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
+  var todayDate = $('#dateTime').val();
+
+   // modalFactory('LocationTest', 'Testing location', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
+   var getmedata = weatherAPI(position.coords.longitude, position.coords.latitude,todayDate).then(openWeatherData => {
+      // get city name from openweathermap API
+       var citynamed = openWeatherData.weatherData.name;
+       console.log('CityName : '+ citynamed);
+       $('#location-input').val(citynamed);
+       modalFactory('GettingLocation', 'Your City is: '+ citynamed, 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude + '<br>' + 'City : '+ citynamed, true);
+       
+      });
+    
+     
+ 
   }
 
 
 // this is for calendar 
-var optionsCalendar = '';
+var optionsCalendar = {
+  startDate : new Date().toISOString().slice(0, 10),
+};
 // do the calendar
 // Initialize all input of type date
 var calendars = bulmaCalendar.attach('[type="datetime-local"]', optionsCalendar);
@@ -178,5 +237,13 @@ if (element) {
     $('#dateTime').val(datepicker.data.value());
 	});
 }
+var lightboxInlineIframe = GLightbox({
+  selector: '.glightbox4'
+});
+lightboxInlineIframe.on('open', (target) => {
+  console.log('lightbox opened');
+});
+
 
 });
+
