@@ -42,3 +42,26 @@ const mapElement = document.getElementById("map");
 mapElement.style.display = "none";
 
 window.initMap = initMap;
+
+
+function displayEventsOnMap(eventsData) {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 10,
+  });
+
+  // Loop over events data and create a marker for each location
+  for (const eventData of eventsData) {
+    const { latitude, longitude } = eventData.venue;
+    const marker = new google.maps.Marker({
+      position: { lat: latitude, lng: longitude },
+      map: map,
+    });
+
+    // Create info window for the marker and attach click event listener to show the event card
+    const infowindow = new google.maps.InfoWindow();
+    google.maps.event.addListener(marker, "click", function () {
+      infowindow.setContent(createEventCard(eventData));
+      infowindow.open(map, marker);
+    });
+  }
+}
