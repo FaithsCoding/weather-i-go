@@ -20,7 +20,16 @@ jQuery(document).ready(function($) {
 
 $('#location-input').on('click', function() {
   //show dropdown with data from localstorage parsed from JSON
-  var storedData = JSON.parse(localStorage.getItem('storedData'));
+  var storedData = JSON.parse(localStorage.getItem('history'));
+
+  //change input from text to a dropdown list from the storedData
+  $('#location-input').append('<option value="' + storedData.dateTimeInput.locationInput + '">' + storedData.dateTimeInput.locationInput + '</option>');
+  //append the dropdown list to the location-input
+ // $('#location-input').append(dropdownList);
+ $('#location-input').replaceWith('<select id="location-input" name="txtQuantity" class="input is-large is-focused  is-rounded">' +
+          '<option value="1">Search for a city/place or click "Use my location" button! </option>' +
+          '<option value="' + storedData.dateTimeInput.locationInput + '">' + storedData.dateTimeInput.locationInput + '</option>' +
+        '</select>');
 })
 
 //var locationGet = $('#my-location');
