@@ -113,7 +113,7 @@ div#map {
     flex-direction: row;
 }
 
-.hero.is-success .title {
+.hero.is-success .card .title {
     color: #000;
     text-align: left;
     line-height: 1.15em!important;
