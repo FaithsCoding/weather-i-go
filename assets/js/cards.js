@@ -77,7 +77,7 @@ const weatherDescription = weatherDescriptiono;
   cardBody.innerHTML = '<a class="button is-primary glightbox4" href="'+ eventExcerpt +'"> Get Tickets</a>';
   const time = document.createElement("time");
   time.setAttribute("datetime", eventDate);
-  time.textContent = "<div class='timed'>"+eventTime +"</div><div class='dated'>" + eventDate +"</div>";
+  time.innerHTML = "<div class='timed'>"+eventTime +"</div><div class='dated'>" + eventDate +"</div>";
   cardBody.appendChild(time);
   cardContent.appendChild(cardBody);
 
