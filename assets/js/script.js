@@ -26,7 +26,7 @@ $('#location-input').on('click', function() {
   $('#location-input').append('<option value="' + storedData.dateTimeInput.locationInput + '">' + storedData.dateTimeInput.locationInput + '</option>');
   //append the dropdown list to the location-input
  // $('#location-input').append(dropdownList);
- $('#location-input').replaceWith('<select id="location-input" name="txtQuantity" class="input is-large is-focused  is-rounded">' +
+ $('#location-input').after('<select id="location-input2" name="txtQuantity" class="input is-large is-focused  is-rounded">' +
           '<option value="1">Search for a city/place or click "Use my location" button! </option>' +
           '<option value="' + storedData.dateTimeInput.locationInput + '">' + storedData.dateTimeInput.locationInput + '</option>' +
         '</select>');
@@ -104,28 +104,12 @@ $('#appStart').on('submit load', function(event){
   var descriptoi = event.description;
  }
 
- var submitHistory =  {
-  
-  dateTimeInput : {
-    locationInput: locationInput,
-    dateTimeInput: dateTimeInput,
-    weatherCondition: weatherCondition,
-    weatherIcon: weatherIcon,
-    weatherTemp: weatherTemp,
-    weatherHumidity: weatherHumidity,
-    weatherWindSpeed: weatherWindSpeed,
-    weatherSunSet: weatherSunSet,
-    infoed: infoed,
-    descriptoi: descriptoi,
-    locationLat: currentLat,
-    locationLng: currentLng,
-  }
 
- }
- var localStorageEntry = JSON.stringify(submitHistory);
+ //var localStorageEntry = JSON.stringify(submitHistory);
 
     displayCards(`${event.name}`, ''+ infoed + '<br>' + descriptoi,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
-    localStorage.setItem('history', localStorageEntry);
+    //var history2 = localStorage.getItem('history');
+    localStorage.setItem('history', locationInput);
   })
     .catch(error => {
     errorHandler(error);
