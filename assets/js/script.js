@@ -23,6 +23,7 @@ jQuery(document).ready(function($) {
 //var locationGet = $('#my-location');
 $('#appStart').on('submit', function(event){
   event.preventDefault();
+  jQuery('#card-container').innerHTML('');
   var locationInput = $('#location-input').val();
   var dateTimeInput = $('#dateTime').val();
   //var parseDateTime = Date.parse(dateTimeInput); // to unix
@@ -79,7 +80,7 @@ curentLng = event._embedded.venues[0].location['longitude'];
     console.log('Weather Condition: '+weatherCondition+'\n Icon : '+ weatherIcon +' \n Temp :'+ weatherTemp+'\n Humidity : '+weatherHumidity +'\n Windspeed :'+ weatherWindSpeed +'\n Sunset :'+ weatherSunSet);
   
   
-    displayCards(`${event.name}`,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`);
+    displayCards(`${event.name}`,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`,weatherIcon,weatherTemp,weatherCondition);
       })
     .catch(error => {
     errorHandler(error);
