@@ -185,4 +185,6 @@ ul.pagination-list {
     width: 100%;
     text-align: left;
     padding-bottom: 10px;
+    font-size: 80%;
+    white-space: pre-wrap;
 }
