@@ -93,18 +93,21 @@ $('#appStart').on('submit load', function(event){
  }
 
  var submitHistory =  {
-  locationInput: locationInput,
-  dateTimeInput: dateTimeInput,
-  weatherCondition: weatherCondition,
-  weatherIcon: weatherIcon,
-  weatherTemp: weatherTemp,
-  weatherHumidity: weatherHumidity,
-  weatherWindSpeed: weatherWindSpeed,
-  weatherSunSet: weatherSunSet,
-  infoed: infoed,
-  descriptoi: descriptoi,
-  locationLat: currentLat,
-  locationLng: currentLng,
+  dateTimeInput : {
+    locationInput: locationInput,
+    dateTimeInput: dateTimeInput,
+    weatherCondition: weatherCondition,
+    weatherIcon: weatherIcon,
+    weatherTemp: weatherTemp,
+    weatherHumidity: weatherHumidity,
+    weatherWindSpeed: weatherWindSpeed,
+    weatherSunSet: weatherSunSet,
+    infoed: infoed,
+    descriptoi: descriptoi,
+    locationLat: currentLat,
+    locationLng: currentLng,
+  }
+
  }
  var localStorageEntry = JSON.stringify(submitHistory);
 
