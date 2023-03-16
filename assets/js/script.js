@@ -63,7 +63,7 @@ $('#appStart').on('submit', function(event){
 curentLng = event._embedded.venues[0].location['longitude'];
    console.log('-----------------------------------------------------');
 
-   displayCards(`${event.name}`,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`);
+   
 
       weatherAPI(event._embedded.venues[0].location['longitude'], event._embedded.venues[0].location['latitude'], dateTimeInput)
       .then(openWeatherData => {
@@ -77,7 +77,9 @@ curentLng = event._embedded.venues[0].location['longitude'];
           var weatherWindSpeed = openWeatherData.quickData.weatherWindSpeed;
           var weatherSunSet = openWeatherData.quickData.weatherSunSet;
     console.log('Weather Condition: '+weatherCondition+'\n Icon : '+ weatherIcon +' \n Temp :'+ weatherTemp+'\n Humidity : '+weatherHumidity +'\n Windspeed :'+ weatherWindSpeed +'\n Sunset :'+ weatherSunSet);
-      
+  
+  
+    displayCards(`${event.name}`,`${event._embedded.venues[0].name}`,`${event.url}`,`${event.dates.start.localDate}`,`${event.dates.start.localTime}`,`${event.images[0].url}`);
       })
     .catch(error => {
     errorHandler(error);

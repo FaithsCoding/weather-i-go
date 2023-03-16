@@ -21,8 +21,12 @@ function weatherAPI(eventLongitude, eventLatitude, eventDateTime){
               weatherHumidity: data.main.humidity,
               weatherWindSpeed : data.wind.speed,
               weatherSunSet : new Date(data.sys.sunset * 1000).toLocaleTimeString(),
-              weatherIcon : data.weather[0].icon,
+              weatherIcon :  'https://openweathermap.org/img/wn/'+data.weather[0].icon+'.png',
               //weather:  { data : weatherAPI(venueLng, venueLat, eventDateTime) },
+             // weather: {
+              //  description: weather.weather[0].description,
+              //  temperature: weather.main.temp,
+               
             },
           });
         } else {

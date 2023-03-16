@@ -4,7 +4,7 @@ const titleInput = document.getElementById("title-input");
 const bodyInput = document.getElementById("body-input");
 const cardContainer = document.getElementById("card-container");
 */
-function displayCards(eventoTitlo, dasVenue, leExcerpto, localDate, localTime, eventImageUrl) {
+function displayCards(eventoTitlo, dasVenue, leExcerpto, localDate, localTime, eventImageUrl, weatherIconUrl, weatherTemp, weatherDescription) {
   // create new card element
   const eventTitle = eventoTitlo;
   const eventVenue = dasVenue;
@@ -12,6 +12,12 @@ function displayCards(eventoTitlo, dasVenue, leExcerpto, localDate, localTime, e
   const eventDate = localDate;
 const eventTime = localTime;
 const eventImg = eventImageUrl;
+const weatherIcon = weatherIconUrl;
+const weatherTemp = weatherTemp;
+const weatherDescription = weatherDescription;
+
+
+
   const card = document.createElement("div");
   card.classList.add("column", "is-4", "card");
 
@@ -35,16 +41,18 @@ const eventImg = eventImageUrl;
   media.classList.add("media");
 
   // create media left element
- // const mediaLeft = document.createElement("div");
-  //mediaLeft.classList.add("media-left");
-  ///const figure2 = document.createElement("figure");
-  //figure2.classList.add("image", "is-48x48");
-  //const img2 = document.createElement("img");
-  //img2.setAttribute("src", venueImg);
-  //img2.setAttribute("alt", eventVenue);
-  //figure2.appendChild(img2);
-  //mediaLeft.appendChild(figure2);
- // media.appendChild(mediaLeft);
+ const mediaLeft = document.createElement("div");
+  mediaLeft.classList.add("media-left");
+  const figure2 = document.createElement("figure");
+  figure2.classList.add("image", "is-48x48");
+  const img2 = document.createElement("img");
+  img2.setAttribute("src", weatherIcon);
+  img2.setAttribute("alt", weatherTemp + "°");
+  const figcaption = document.createElement("figcaption");
+  figcaption.innerHTML = weatherTemp + '"°"'+'<br>'+ '<span>'+weatherDescription+'</span>';
+  figure2.appendChild(img2);
+  mediaLeft.appendChild(figure2);
+ media.appendChild(mediaLeft);
 
   // create media content element
   const mediaContent = document.createElement("div");
