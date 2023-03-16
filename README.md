@@ -54,9 +54,9 @@ Use a CSS framework other than Bootstrap.
 ```
 ## API's used
 ```
-<p><a href="https://openweathermap.org/">OpenWeatherMap</a></p>
-<p><a href="https://developer.ticketmaster.com/products-and-docs/apis/">TicketMaster</a></p>
-<p><a href="[https://openweathermap.org/](https://console.cloud.google.com/google/maps-apis/discover?utm_source=Docs_GS_Button&ref=https:%2F%2Fdevelopers.google.com%2Fmaps%2F&_gl=1*90zukj*_ga*NzM4MDk5NTkuMTY3ODk4OTA5Ng..*_ga_NRWSTWS78N*MTY3ODk4OTA5Ni4xLjAuMTY3ODk4OTEwNC4wLjAuMA..&pli=1)">GoogleMaps</a></p>
+OpenWeather
+TicketMaster
+GoogleMaps
 ```
 
 ## Usage
@@ -72,7 +72,7 @@ Additionally, when the search button has been clicked their current location wil
 ```
 ##Screenshot
 ```
-![]()
+![Screenshot 2023-03-16 at 18 27 49](https://user-images.githubusercontent.com/122907573/225718337-590da48d-7040-4da2-a10b-acad6bb5553c.png)
 ```
 
 ##Overall
@@ -81,4 +81,12 @@ We have made a good app in a short time considering it was our first time collab
 ```
 
 ##Powerpoint Presentation Link
+
+https://docs.google.com/presentation/d/1aNNbtdaPl7awkzjnvKA-2G4kHMTIg4iwBegITmMp4gE/edit#slide=id.g21c2ec0a254_0_1873
+
+##Creators
+          <li><a href="https://github.com/Jake-Orch">Jake Orchard</a></li>
+          <li><a href="https://github.com/dexit">Rihards 'dExIT' Mantejs</a></li>
+          <li><a href="https://github.com/Adinahidan">Adina Hidan</a></li>
+          <li><a href="https://github.com/FaithsCoding">Faith Meades</a></li>
 
