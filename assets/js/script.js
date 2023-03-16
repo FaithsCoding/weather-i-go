@@ -141,8 +141,7 @@ $('#my-location').on('click', function(event){
       //
         
       navigator.geolocation.getCurrentPosition(function(position) {
-        modalFactory('LocationTest', 'Testing location', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
-      console.log("Latitude: " + position.coords.latitude);
+        console.log("Latitude: " + position.coords.latitude);
         console.log("Longitude: " + position.coords.longitude);
       });
     } else {
@@ -151,7 +150,11 @@ $('#my-location').on('click', function(event){
     }
 });
 function showPosition(position) {
-    modalFactory('LocationTest', 'Testing location', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
+   // modalFactory('LocationTest', 'Testing location', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
+    var cityName = getCityFromLatLongWeatherAPI(position.coords.longitude, position.coords.latitude);
+    console.log('CityName : '+ cityName.weatherData.city.name);
+    modalFactory('GettingLocation', 'These are your location Coordinates', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
+ 
   }
 
 

@@ -33,7 +33,28 @@ function weatherAPI(eventLongitude, eventLatitude, eventDateTime){
   });
 })
 };
+function getCityFromLatLongWeatherAPI(eventLongitude, eventLatitude){
 
+  var weatherApiKey = "ad9ca655ad513633f73afcce5f7d7aad";
+  var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + eventLatitude + "&lon=" + eventLongitude + "&units=metric&appid=" + weatherApiKey;
+  return new Promise((resolve, reject) => {
+     $.get(apiUrl, function(data) {
+      console.log('Weather function data dump:');
+      console.log(data); // Print weather data to console
+      console.log('------------------------------------------------------');
+      if (data.cod === 200) {
+        resolve({
+          weatherData: data,
+         
+        });
+      } else {
+        reject('No City data found!');
+      }
+
+ // return data;
+});
+})
+};
 // This is just a test!
 //var runAPI = weatherAPI('-1.2409681', '52.3778256', '03/12/2023 19:00');
 
