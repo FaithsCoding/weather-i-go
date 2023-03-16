@@ -46,6 +46,9 @@ $('#appStart').on('submit load', function(event){
     console.log(data.events);
     // Use event data here
     if(data.events.length > 0){ 
+      var eventPaginationTotal = data.events.length;
+      var currentPagination = data.eventPagination.givenPageOffset;
+      var totalpages = data.eventPagination.totalPages;
     for (let i = 0; i < data.events.length - 1; i++) {
       const event = data.events[i];
 
