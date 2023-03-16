@@ -33,18 +33,18 @@ function weatherAPI(eventLongitude, eventLatitude, eventDateTime){
   });
 })
 };
-function getCityFromLatLongWeatherAPI(eventLongitude, eventLatitude){
+function getCityFromLatLongWeatherAPI(eventLongitude2, eventLatitude2){
 
-  var weatherApiKey = "ad9ca655ad513633f73afcce5f7d7aad";
-  var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + eventLatitude + "&lon=" + eventLongitude + "&units=metric&appid=" + weatherApiKey;
+  var weatherApiKey2 = "ad9ca655ad513633f73afcce5f7d7aad";
+  var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + eventLatitude2 + "&lon=" + eventLongitude2 + "&units=metric&appid=" + weatherApiKey2;
   return new Promise((resolve, reject) => {
      $.get(apiUrl, function(data) {
       console.log('Weather function data dump:');
       console.log(data); // Print weather data to console
       console.log('------------------------------------------------------');
-      if (data.cod === 200) {
+      if (data) {
         resolve({
-          weatherData: data,
+          city: data.city.name,
          
         });
       } else {

@@ -49,8 +49,9 @@ function getEventsData(city, eventDateTime) {
   //getEventsData('London','2023-03-19T19:17:00Z');
 
   function getEventsData(city, eventDateTime) {
+    var endtimed = eventDateTime.slice(0, eventDateTime.length - 9) + '23:59:59Z';
     var ticketmaster_api_key = "MFEW1mtqUYUpqm9K3cP6Bg8VbI8KNxDF";
-    var ticketmaster_api_url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketmaster_api_key}&city=${city}&startDateTime=${eventDateTime}`; //&endDateTime=${eventDateTime}`;
+    var ticketmaster_api_url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${ticketmaster_api_key}&city=${city}&startDateTime=${eventDateTime}&endDateTime=${endtimed}`;
     
     return new Promise((resolve, reject) => {
       // Make API request to Ticketmaster API

@@ -43,7 +43,8 @@ $('#appStart').on('submit', function(event){
   .then(data => {
     console.log(data.events);
     // Use event data here
-    for (let i = 0; i < data.events.length; i++) {
+    if(data.events.length > 0){ 
+    for (let i = 0; i < data.events.length - 1; i++) {
       const event = data.events[i];
 
     
@@ -83,7 +84,9 @@ curentLng = event._embedded.venues[0].location['longitude'];
     console.error(error);
     });
 
- 
+  }
+  }else{
+    errorHandler('No Events Found');
   }
   })
   .catch(error => {
@@ -150,16 +153,27 @@ $('#my-location').on('click', function(event){
     }
 });
 function showPosition(position) {
+  var todayDate = $('#dateTime').val();
+
    // modalFactory('LocationTest', 'Testing location', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
-    var cityName = getCityFromLatLongWeatherAPI(position.coords.longitude, position.coords.latitude);
-    console.log('CityName : '+ cityName.weatherData.city.name);
-    modalFactory('GettingLocation', 'These are your location Coordinates', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude, true);
+   var getmedata = weatherAPI(position.coords.longitude, position.coords.latitude,todayDate).then(openWeatherData => {
+      // get city name from openweathermap API
+       var citynamed = openWeatherData.weatherData.name;
+       console.log('CityName : '+ citynamed);
+       $('#location-input').val(citynamed);
+       modalFactory('GettingLocation', 'These are your location Coordinates', 'Latitude: ' + position.coords.latitude + '<br>' + 'Longitude: ' + position.coords.longitude + '<br>' + 'City : '+ citynamed + '', true);
+       
+      });
+    
+     
  
   }
 
 
 // this is for calendar 
-var optionsCalendar = '';
+var optionsCalendar = {
+  startDate : new Date().toISOString().slice(0, 10),
+};
 // do the calendar
 // Initialize all input of type date
 var calendars = bulmaCalendar.attach('[type="datetime-local"]', optionsCalendar);
