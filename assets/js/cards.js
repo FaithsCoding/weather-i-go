@@ -74,7 +74,7 @@ const eventInfoo = evventoINFO;
   // create card body element
   const cardBody = document.createElement("div");
   cardBody.classList.add("content");
-  cardBody.innerHTML = '<div class="card-info-box">'+ eventInfoo +'</div><a class="button is-primary glightbox4" href="'+ eventExcerpt +'"> Get Tickets</a>';
+  cardBody.innerHTML = '<div class="card-info-box">'+ eventInfoo +'</div><a class="button is-primary glightbox4" href="'+ eventExcerpt +'" target="_blank"> Get Tickets</a>';
   const time = document.createElement("time");
   time.setAttribute("datetime", eventDate);
   time.innerHTML = "<div class='timed'>"+eventTime +"</div><div class='dated'>" + eventDate +"</div>";

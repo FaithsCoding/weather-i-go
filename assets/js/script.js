@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 
 
 //var locationGet = $('#my-location');
-$('#appStart').on('submit', function(event){
+$('#appStart').on('submit load', function(event){
   event.preventDefault();
  
   var locationInput = $('#location-input').val();
