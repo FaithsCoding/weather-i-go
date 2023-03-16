@@ -36,16 +36,16 @@ const eventImg = eventImageUrl;
   media.classList.add("media");
 
   // create media left element
-  const mediaLeft = document.createElement("div");
-  mediaLeft.classList.add("media-left");
-  const figure2 = document.createElement("figure");
-  figure2.classList.add("image", "is-48x48");
-  const img2 = document.createElement("img");
-  img2.setAttribute("src", venueImg);
-  img2.setAttribute("alt", eventVenue);
-  figure2.appendChild(img2);
-  mediaLeft.appendChild(figure2);
-  media.appendChild(mediaLeft);
+ // const mediaLeft = document.createElement("div");
+  //mediaLeft.classList.add("media-left");
+  ///const figure2 = document.createElement("figure");
+  //figure2.classList.add("image", "is-48x48");
+  //const img2 = document.createElement("img");
+  //img2.setAttribute("src", venueImg);
+  //img2.setAttribute("alt", eventVenue);
+  //figure2.appendChild(img2);
+  //mediaLeft.appendChild(figure2);
+ // media.appendChild(mediaLeft);
 
   // create media content element
   const mediaContent = document.createElement("div");

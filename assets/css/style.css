@@ -126,3 +126,12 @@ div#map {
     color: darkgrey;
     text-align: left;
 }
+
+.hero.is-fullheight .hero-body, .hero.is-fullheight-with-navbar .hero-body, .hero.is-halfheight .hero-body {
+    align-items: stretch!important;
+    display: flex;
+    flex-direction: column;
+    padding: 0!Important;
+    align-content: space-around;
+    justify-content: space-between;
+}
